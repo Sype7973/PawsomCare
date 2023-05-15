@@ -25,11 +25,12 @@ What are the steps required to install your project? Provide a step-by-step desc
 ## Usage
 
 -- WireFRAME
-![wireframe](/PawsomeCare/img/Screencap-wireframe.PNG)
-![wireframe](/PawsomeCare/img/Screencap-wireframe2.PNG)
-![wireframe](/PawsomeCare/img/Screencap-wireframe3.PNG)
-![wireframe](/PawsomeCare/img/Screencap-wireframe4.PNG)
-![wireframe](/PawsomeCare/img/Screencap-wireframe5.PNG)
+
+![wireframe](img/Screencap-wireframe.PNG)
+![wireframe](img/Screencap-wireframe2.PNG)
+![wireframe](img/Screencap-wireframe3.PNG)
+![wireframe](img/Screencap-wireframe4.PNG)
+![wireframe](img/Screencap-wireframe5.PNG)
 
 
 ## Credits

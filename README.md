@@ -31,6 +31,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 ![wireframe](img/Screencap-wireframe3.PNG)
 ![wireframe](img/Screencap-wireframe4.PNG)
 ![wireframe](img/Screencap-wireframe5.PNG)
+![wireframe](img/Screencap-wireframe6.PNG)
 
 
 ## Credits

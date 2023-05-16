@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS pawesome_db;
+
+CREATE DATABASE pawesome_db;

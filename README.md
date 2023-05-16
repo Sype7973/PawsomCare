@@ -1,5 +1,10 @@
 # PawsomCare
 
+Model Google Doc: 
+https://docs.google.com/document/d/12pjtwlfE36tEv3UrgP7gf4OUjNMb8RbmXzo8E8hbV1Q/edit?usp=sharing
+
+
+
 ## Description
 
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:

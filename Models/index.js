@@ -47,6 +47,13 @@ petOwner.belongsToMany(blogPost, {
     }
 });
 
+petOwner.belongsToMany(comments, {
+    through: {
+        model: comments,
+        foreignKey: 'petOwner_Id',
+        onDelete: 'CASCADE'
+    }
+});
 
 // A blog post can have many comments
 blogPost.hasMany(comments, {
@@ -59,5 +66,6 @@ module.exports = {
     blogPost,
     cats,
     dogs,
-    petOwner
+    petOwner,
+    comments
 };

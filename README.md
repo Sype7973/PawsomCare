@@ -1,5 +1,10 @@
 # PawsomCare
 
+Model Google Doc: 
+https://docs.google.com/document/d/12pjtwlfE36tEv3UrgP7gf4OUjNMb8RbmXzo8E8hbV1Q/edit?usp=sharing
+
+
+
 ## Description
 
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
@@ -26,12 +31,9 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 -- WireFRAME
 
-![wireframe](img/Screencap-wireframe.PNG)
-![wireframe](img/Screencap-wireframe2.PNG)
-![wireframe](img/Screencap-wireframe3.PNG)
-![wireframe](img/Screencap-wireframe4.PNG)
-![wireframe](img/Screencap-wireframe5.PNG)
-![wireframe](img/Screencap-wireframe6.PNG)
+https://docs.google.com/presentation/d/1UBaOsoW7ia7gANQC1aCjdj8GyfLkBF8j08GmHUJm6Uc/edit?usp=sharing
+
+https://docs.google.com/document/d/12pjtwlfE36tEv3UrgP7gf4OUjNMb8RbmXzo8E8hbV1Q/edit?usp=sharing
 
 
 ## Credits

@@ -25,6 +25,7 @@ router.get('/:id', async (req, res) => {
             res.status(404).json({ message: 'No comment found with that id!' });
             return;
         }
+        // res.render - need to add this but render blogpost page by comment id attached to blogpost
         res.status(200).json(commentData);
     }
     catch (err) {

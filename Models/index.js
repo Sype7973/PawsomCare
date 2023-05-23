@@ -1,15 +1,15 @@
-const blogPost = require('./blogPost');
+const BlogPost = require('./BlogPost');
 const Pets = require('./Pets');
 const User = require('./User');
 const comments = require('./comments');
 
 // blogpost belongs to petOwner
-blogPost.belongsTo(User, {
-    foreignKey: 'User_Id',
+BlogPost.belongsTo(User, {
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 // A pet owner can have many blog posts
-User.hasMany(blogPost, {
+User.hasMany(BlogPost, {
     foreignKey: 'User_Id',
     onDelete: 'CASCADE'
 });
@@ -27,10 +27,10 @@ Pets.belongsTo(User, {
 });
 
 // a pet owner can have many blog posts
-User.belongsToMany(blogPost, {
+User.belongsToMany(BlogPost, {
     through: {
-        model: blogPost,
-    foreignKey: 'User_Id',
+        model: BlogPost,
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
     }
 });
@@ -44,14 +44,14 @@ User.belongsToMany(comments, {
 });
 
 // A blog post can have many comments
-blogPost.hasMany(comments, {
-    foreignKey: 'blogPost_Id',
+BlogPost.hasMany(comments, {
+    foreignKey: 'blogPost_id',
     onDelete: 'CASCADE'
 });
 
 
 module.exports = {
-    blogPost,
+    BlogPost,
     Pets,
     User,
     comments

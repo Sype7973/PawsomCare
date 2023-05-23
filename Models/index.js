@@ -3,17 +3,16 @@ const Pets = require('./Pets');
 const User = require('./User');
 const comments = require('./comments');
 
+// A pet owner can have many pets
+User.hasMany(Pets, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
 
-// // A pet owner can have many pets
-// User.hasMany(Pets, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// });
-
-// // pets belong to pet owner
-// Pets.belongsTo(User, {
-//     foreignKey: 'user_id',
-// });
+// pets belong to pet owner
+Pets.belongsTo(User, {
+    foreignKey: 'user_id',
+});
 
 // A pet owner can have many blog posts
 User.hasMany(BlogPost, {

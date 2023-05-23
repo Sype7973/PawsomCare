@@ -3,51 +3,71 @@ const Pets = require('./Pets');
 const User = require('./User');
 const comments = require('./comments');
 
+
+// // A pet owner can have many pets
+// User.hasMany(Pets, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE'
+// });
+
+// // pets belong to pet owner
+// Pets.belongsTo(User, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE' // maybe not?
+// });
+
+// A pet owner can have many blog posts
+User.hasMany(BlogPost, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
 // blogpost belongs to petOwner
 BlogPost.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
-// A pet owner can have many blog posts
-User.hasMany(BlogPost, {
-    foreignKey: 'User_Id',
-    onDelete: 'CASCADE'
-});
-
-// A pet owner can have many pets
-User.hasMany(Pets, {
-    foreignKey: 'User_Id',
-    onDelete: 'CASCADE'
-});
-
-// pets belong to pet owner
-Pets.belongsTo(User, {
-    foreignKey: 'User_Id',
-    onDelete: 'CASCADE'
-});
-
-// a pet owner can have many blog posts
-User.belongsToMany(BlogPost, {
-    through: {
-        model: BlogPost,
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-    }
-});
-
-User.belongsToMany(comments, {
-    through: {
-        model: comments,
-        foreignKey: 'User_Id',
-        onDelete: 'CASCADE'
-    }
-});
 
 // A blog post can have many comments
 BlogPost.hasMany(comments, {
-    foreignKey: 'blogPost_id',
+    foreignKey: 'blogPost_Id',
     onDelete: 'CASCADE'
 });
+
+// comment is connected to one blog post
+comments.belongsTo(BlogPost, {
+    foreignKey: 'blogPost_Id'
+});
+
+// a user can have many comments
+User.hasMany(comments, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+// a comment only has one user
+comments.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+// // a pet owner can have many blog posts
+// User.belongsToMany(BlogPost, {
+//     through: {
+//         model: blogPost,
+//     foreignKey: 'User_Id',
+//     onDelete: 'CASCADE'
+//     }
+// });
+
+// User.belongsToMany(comments, {
+//     through: {
+//         model: comments,
+//         foreignKey: 'User_Id',
+//         onDelete: 'CASCADE'
+//     }
+// });
+
+
 
 
 module.exports = {

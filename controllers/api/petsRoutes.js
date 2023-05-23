@@ -1,42 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/withAuth');
 
-const { Pets } = require('../../models/Pets');
-
-// get all pets route
-router.get('/', withAuth, async  (req, res) => {
-    try {
-        const petsData = await Pets.findAll();
-        
-        // Serialize data so the template can read it
-        const pets = petsData.map((pet) => pet.get({ plain: true }));
-
-        // Pass serialized data and session flag into template
-        res.render('ownerPets', {
-            pets,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-// pets routes for specific pet
-router.get('/:id', withAuth, async (req, res) => {
-    try {
-        const petsData = await Pets.findByPk(req.params.id);
-
-        if (!petsData) {
-            res.status(404).json({ message: 'No pet found with this id!' });
-            return;
-        }
-            // needs to change to owner pets to show specific pet
-        res.render('petsCard', {
-            petsData,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+const { Pets } = require('../../models');
 
 // delete a pet 
 router.delete('/:id', withAuth, async (req, res) => {
@@ -80,6 +45,28 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+router.put('/:id', async (req, res) => {
+
+    try {
+        // update a pet by its `id` value
+        const updatedPet = await Pets.update(
+            {
+                ...req.body,
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        );
+
+        res.status(200).json(updatedPet);
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
+});
 
 
 module.exports = router;

@@ -1,0 +1,30 @@
+[
+  {
+    "pet_category": "Cats",
+    "post_type": "Funny",
+    "title": "Biso did something silly",
+    "body": "He got stuck in my shoe",
+    "user_id": 1
+  },
+  {
+    "pet_category": "Cats",
+    "post_type": "Advice",
+    "title": "How do i make my cat take his medicine?",
+    "body": "He always spits it out!",
+    "user_id": 1
+  },
+  {
+    "pet_category": "Dogs",
+    "post_type": "Advice",
+    "title": "How to make my dog stop pooping on the carpet?",
+    "body": "It's like he's a poop machine!",
+    "user_id": 2
+  },
+  {
+    "pet_category": "Dogs",
+    "post_type": "Funny",
+    "title": "Literal Shit Storm!",
+    "body": "Milo wipes his poopy bum all over my apartment floor!",
+    "user_id": 2
+  }
+]

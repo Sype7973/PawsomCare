@@ -1,57 +1,56 @@
-const blogPost = require('./blogPost');
+const BlogPost = require('./BlogPost');
 const Pets = require('./Pets');
 const User = require('./User');
 const comments = require('./comments');
 
-// blogpost belongs to petOwner
-blogPost.belongsTo(User, {
-    foreignKey: 'User_Id',
-    onDelete: 'CASCADE'
-});
+
+// // A pet owner can have many pets
+// User.hasMany(Pets, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE'
+// });
+
+// // pets belong to pet owner
+// Pets.belongsTo(User, {
+//     foreignKey: 'user_id',
+// });
+
 // A pet owner can have many blog posts
-User.hasMany(blogPost, {
-    foreignKey: 'User_Id',
+User.hasMany(BlogPost, {
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
-// A pet owner can have many pets
-User.hasMany(Pets, {
-    foreignKey: 'User_Id',
+// blogpost belongs to petOwner
+BlogPost.belongsTo(User, {
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
-});
-
-// pets belong to pet owner
-Pets.belongsTo(User, {
-    foreignKey: 'User_Id',
-    onDelete: 'CASCADE'
-});
-
-// a pet owner can have many blog posts
-User.belongsToMany(blogPost, {
-    through: {
-        model: blogPost,
-    foreignKey: 'User_Id',
-    onDelete: 'CASCADE'
-    }
-});
-
-User.belongsToMany(comments, {
-    through: {
-        model: comments,
-        foreignKey: 'User_Id',
-        onDelete: 'CASCADE'
-    }
 });
 
 // A blog post can have many comments
-blogPost.hasMany(comments, {
+BlogPost.hasMany(comments, {
     foreignKey: 'blogPost_Id',
     onDelete: 'CASCADE'
 });
 
+// comment is connected to one blog post
+comments.belongsTo(BlogPost, {
+    foreignKey: 'blogPost_Id'
+});
+
+// a user can have many comments
+User.hasMany(comments, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+// a comment only has one user
+comments.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
 module.exports = {
-    blogPost,
+    BlogPost,
     Pets,
     User,
     comments

@@ -22,6 +22,11 @@ BlogPost.init(
             allowNull: false, 
         },
 
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+
         body: {
             type: DataTypes.STRING,
             allowNull: false,

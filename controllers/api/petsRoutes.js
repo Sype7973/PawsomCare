@@ -1,9 +1,10 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/withAuth');
 
 const { Pets } = require('../../models/Pets');
 
 // get all pets route
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async  (req, res) => {
     try {
         const petsData = await Pets.findAll();
         
@@ -11,9 +12,8 @@ router.get('/', async (req, res) => {
         const pets = petsData.map((pet) => pet.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('petsCard', {
+        res.render('ownerPets', {
             pets,
-            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 // pets routes for specific pet
-router.get(':id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const petsData = await Pets.findByPk(req.params.id);
 
@@ -29,10 +29,9 @@ router.get(':id', async (req, res) => {
             res.status(404).json({ message: 'No pet found with this id!' });
             return;
         }
-
+            // needs to change to owner pets to show specific pet
         res.render('petsCard', {
             petsData,
-            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
@@ -40,7 +39,7 @@ router.get(':id', async (req, res) => {
 });
 
 // delete a pet 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const petsData = await Pets.destroy({
             where: {
@@ -56,7 +55,6 @@ router.delete('/:id', async (req, res) => {
         
         res.render('petsCard', {
             petsData,
-            logged_in: req.session.logged_in
         });
 
     } catch (err) {
@@ -65,7 +63,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // create a new pet
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const petsData = await Pets.create({
             // spread syntax to pass in all req.body properties
@@ -75,7 +73,6 @@ router.post('/', async (req, res) => {
 
         res.render('petsCard', {
             petsData,
-            logged_in: req.session.logged_in
         });
 
     } catch (err) {

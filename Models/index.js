@@ -13,7 +13,6 @@ const comments = require('./comments');
 // // pets belong to pet owner
 // Pets.belongsTo(User, {
 //     foreignKey: 'user_id',
-//     onDelete: 'CASCADE' // maybe not?
 // });
 
 // A pet owner can have many blog posts
@@ -49,26 +48,6 @@ User.hasMany(comments, {
 comments.belongsTo(User, {
     foreignKey: 'user_id'
 });
-
-// // a pet owner can have many blog posts
-// User.belongsToMany(BlogPost, {
-//     through: {
-//         model: blogPost,
-//     foreignKey: 'User_Id',
-//     onDelete: 'CASCADE'
-//     }
-// });
-
-// User.belongsToMany(comments, {
-//     through: {
-//         model: comments,
-//         foreignKey: 'User_Id',
-//         onDelete: 'CASCADE'
-//     }
-// });
-
-
-
 
 module.exports = {
     BlogPost,

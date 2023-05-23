@@ -6,3 +6,6 @@
 
 // API saves info to the databse
 // homeroutes gets info from the database and passes it to handlebars to render (with res.render)
+
+const router = require('express').Router();
+

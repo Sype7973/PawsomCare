@@ -34,6 +34,7 @@ router.get('/:id', async (req, res) => {
         // TO DO: !!!!! order from last to first?
         const blogPostsData = await BlogPost.findByPk(req.params.id, {
             include: [{ model: comments }],
+            
         });
 
         // Serialize data so the template can read it

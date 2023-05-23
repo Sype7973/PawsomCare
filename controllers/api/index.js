@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
-const userRoutes = require('./api/userRoutes');
-const blogPostAPIRoutes = require('./api/blogPostAPIRoutes');
-const commentsRoutes = require('./api/commentsRoutes');
-const petsRoutes = require('./api/petsRoutes');
+const userRoutes = require('./userRoutes');
+const blogPostAPIRoutes = require('./blogPostAPIRoutes');
+const commentsRoutes = require('./commentsAPIRoutes');
+const petsRoutes = require('./petsRoutes');
 
 // to get here it's "localhost.com/api/"
 

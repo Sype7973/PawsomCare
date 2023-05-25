@@ -1,0 +1,60 @@
+{{!-- check boxes for certain fields in req body, everything else string/integer based on model --}}
+<div class="control">
+  <input class="input" type="text" placeholder="Pet Name">
+</div>
+{{!-- dropdown box for pet type - cat/dog --}}
+<div>
+    <select>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+    </select>
+</div>
+{{!-- pet breed --}}
+<div class="control">
+  <input class="input" type="text" placeholder="Pet Breed">
+</div>
+{{!-- pet age --}}
+<div class="control">
+  <input class="input" type="text" placeholder="Pet Age">
+</div>
+{{!-- pet description, larger text area --}}
+<div class="control">
+  <textarea class="textarea" placeholder="Pet Description"></textarea>
+</div>
+{{!-- pet image upload leave empty for now --}}
+{{!-- pet size dropdown with options, small, medium, large --}}
+<div>
+    <select>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+    </select>
+</div>
+{{!-- pet allergies --}}
+<div class="control">
+  <input class="input" type="text" placeholder="Pet Allergies">
+</div>
+{{!-- pet medications --}}
+<div class="control">
+  <input class="input" type="text" placeholder="Pet Medications">
+</div>
+{{!-- pet exercise --}}
+<div class="control">
+  <input class="input" type="text" placeholder="Pet Exercise">
+  </div>
+{{!-- pet food --}}
+<div class="control">
+  <input class="input" type="text" placeholder="Pet Food">
+</div>
+{{!-- pet grooming --}}
+<div class="control">
+  <input class="input" type="text" placeholder="Pet Grooming">
+</div>
+{{!-- submit button that handles all text area --}}
+<div class="control">
+  <button class="button is-primary">Submit</button>
+</div>
+{{!-- script for sign up --}}
+<script src="/js/petSignUp.js"></script>
+
+```

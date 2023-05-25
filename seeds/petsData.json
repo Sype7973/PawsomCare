@@ -1,0 +1,67 @@
+[
+    {
+        "pet_name": "Purrsloud",
+        "pet_type": "Cat",
+        "pet_breed": "Siamese",
+        "pet_age":  5,
+        "pet_description": "A loud meower, loves scratches behind the ears, hates baths",
+        "pet_image_url": "http://placekitten.com/300/300",
+        "pet_size": "small",
+        "pet_allergies": "none",
+        "pet_medication": "heart-worm preventative",
+        "pet_grooming": "self grooms, bath once a month",
+        "pet_exercise": "30 minutes daily",
+        "pet_food": "1 cup of dry food twice daily",
+        "user_id": 1
+
+    },
+    {
+        "pet_name": "Barksalot",
+        "pet_type": "Dog",
+        "pet_breed": "Dalmation",
+        "pet_age":  3,
+        "pet_description": "A loud barker, loves long walks, hates cats",
+        "pet_image_url": "http://placedog.net/300/300",
+        "pet_size": "medium",
+        "pet_allergies": "none",
+        "pet_medication": "heart-worm preventative",
+        "pet_grooming": "bath once a month",
+        "pet_exercise": "1 hour daily",
+        "pet_food": "2 cups of dry food twice daily",
+        "user_id": 2
+
+    },
+    {
+        "pet_name": "Meowsalot",
+        "pet_type": "Cat",
+        "pet_breed": "Persian",
+        "pet_age":  2,
+        "pet_description": "A quiet meower, loves long naps, hates dogs",
+        "pet_image_url": "http://placekitten.com/300/300",
+        "pet_size": "small",
+        "pet_allergies": "none",
+        "pet_medication": "heart-worm preventative",
+        "pet_grooming": "self grooms, bath once a month",
+        "pet_exercise": "30 minutes daily",
+        "pet_food": "1 cup of dry food twice daily",
+        "user_id": 3
+
+    },
+    {
+        "pet_name": "Woofsalot",
+        "pet_type": "Dog",
+        "pet_breed": "Golden Retriever",
+        "pet_age":  4,
+        "pet_description": "A quiet barker, loves long walks, hates cats",
+        "pet_image_url": "http://placedog.net/300/300",
+        "pet_size": "large",
+        "pet_allergies": "none",
+        "pet_medication": "heart-worm preventative",
+        "pet_grooming": "bath once a month",
+        "pet_exercise": "1 hour daily",
+        "pet_food": "2 cups of dry food twice daily",
+        "user_id": 2
+
+    }
+
+]

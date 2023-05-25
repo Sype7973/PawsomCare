@@ -47,7 +47,8 @@ router.get('/all', withAuth, async (req, res) => {
 // pets routes for specific pet
 router.get('/:id', withAuth, async (req, res) => {
     try {
-        const petsData = [await Pets.findByPk(req.params.id)];
+        const petsData = await Pets.findByPk(req.params.id);
+
 
         // Serialize data so the template can read it
         const pets = petsData.get({ plain: true });

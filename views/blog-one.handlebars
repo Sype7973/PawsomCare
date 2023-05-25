@@ -2,7 +2,7 @@
     <div class="">
         <h4>{{blogPosts.updatedAt}}</h4>
         <h3>{{blogPosts.User.username}}</h3>
-        <h2>{{blogPosts.title}}</h2>
+        <h2 id="blog-title" data-blog-id="{{blogPosts.id}}">{{blogPosts.title}}</h2>
     </div>
     <div class="">
         {{!-- insert image --}}
@@ -25,12 +25,11 @@
         {{/each}}
 
         <div>
-    <h3>Leave a comment:</h3>
-    <form>
+    <form class="comment-form" id="user-id" data-user-id="{{user_id}}">
         <div class="field">
-            {{!-- <label class="label" for="new-comment">Title:</label> --}}
+            <label class="label" for="new-comment">Leave a comment:</label>
             <div class="control">
-                <input class="input" type="text" id="new-comment" />
+                <input class="input" type="text" id="new-comment"/>
             </div>
         </div>
         <div class="field">

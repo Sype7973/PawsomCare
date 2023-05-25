@@ -57,6 +57,7 @@ router.get('/all', withAuth, async (req, res) => {
         res.render('blogs-all', {
             blogPosts,
             logged_in: req.session.logged_in,
+            user_id: req.session.user_id,
         });
     } catch (err) {
         console.log(err);
@@ -98,6 +99,7 @@ router.get('/:id', withAuth, async (req, res) => {
             blogPosts,
             commentsArray,
             logged_in: req.session.logged_in,
+            user_id: req.session.user_id,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -172,6 +174,7 @@ router.get('/:pet_category/:post_type', withAuth, async (req, res) => {
         res.render('blogs-all', {
             blogPosts,
             logged_in: req.session.logged_in,
+            user_id: req.session.user_id,
         });
     } catch (err) {
         res.status(500).json(err);

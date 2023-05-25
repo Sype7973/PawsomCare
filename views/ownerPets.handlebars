@@ -16,6 +16,7 @@
           </div>
           <div class="content">
             <div class="buttons">
+              {{!-- need to change /edit or take away link and build link into JS --}}
               <a href="/pets/{{pet.id}}" class="button is-small is-link">View</a>
               <a href="/pets/{{pet.id}}/edit" class="button is-small is-link">Edit</a>
             </div>
@@ -24,6 +25,7 @@
         </div>
       </div>
     </div>
+    
   {{else}}
     <div class="column is-4">
       <div class="card">
@@ -34,4 +36,5 @@
       </div>
     </div>
   {{/each}}
+  <button class="button is-large is-fullwidth is-outlined is-warning">Add a Pet</button>
 </div>

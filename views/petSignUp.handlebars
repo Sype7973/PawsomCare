@@ -50,11 +50,23 @@
 <div class="control">
   <input class="input" type="text" placeholder="Pet Grooming">
 </div>
+{{!--  pet image upload --}}
+<div class="file">
+  <label class="file-label">
+    <input class="file-input" type="file" name="resume">
+    <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+        Upload a picture of your pet!
+      </span>
+    </span>
+  </label>
+</div>
 {{!-- submit button that handles all text area --}}
 <div class="control">
   <button class="button is-primary">Submit</button>
 </div>
 {{!-- script for sign up --}}
 <script src="/js/petSignUp.js"></script>
-
-```

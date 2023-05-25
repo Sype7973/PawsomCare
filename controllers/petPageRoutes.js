@@ -8,7 +8,11 @@ const { Pets } = require('../models');
 // get all pets route
 router.get('/', withAuth, async (req, res) => {
     try {
-        const petsData = await Pets.findAll();
+        const petsData = await Pets.findAll({
+            where: {
+                user_id: req.session.user_id,
+            },
+        });
 
         // Serialize data so the template can read it
         const pets = petsData.map((pet) => pet.get({ plain: true }));
@@ -25,12 +29,16 @@ router.get('/', withAuth, async (req, res) => {
 // pets routes for specific pet
 router.get('/:id', withAuth, async (req, res) => {
     try {
-        const petsData = await Pets.findByPk(req.params.id);
+        const petsData = await Pets.findByPk(req.params.id, {
+            where: {
+                user_id: req.session.user_id,
+            },
+        });
 
         // Serialize data so the template can read it
         const pets = petsData.map((pet) => pet.get({ plain: true }));
 
-        if (!petsData) {
+        if (!pets) {
             res.status(404).json({ message: 'No pet found with this id!' });
             return;
         }
@@ -38,7 +46,7 @@ router.get('/:id', withAuth, async (req, res) => {
         res.render('petsCard', {
             pets,
         });
-        
+
     } catch (err) {
         res.status(500).json(err);
     }

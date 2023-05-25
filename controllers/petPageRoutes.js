@@ -20,6 +20,7 @@ router.get('/', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('ownerPets', {
             pets,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -45,6 +46,7 @@ router.get('/:id', withAuth, async (req, res) => {
         // needs to change to owner pets to show specific pet
         res.render('petsCard', {
             pets,
+            logged_in: req.session.logged_in,
         });
 
     } catch (err) {

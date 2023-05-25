@@ -20,6 +20,7 @@ router.get('/all', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('blogs-all', {
             blogPosts,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -46,6 +47,7 @@ router.get('/:id', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('blog-one', {
             blogPosts,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -72,6 +74,7 @@ router.get('/cats/all', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('blogs-all', {
             blogPosts,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -97,6 +100,7 @@ router.get('/dogs/all', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('blogs-all', {
             blogPosts,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -121,6 +125,7 @@ router.get('/cats/funny', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('blogs-all', {
             blogPosts,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -145,6 +150,7 @@ router.get('/cats/advice', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('blogs-all', {
             blogPosts,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -169,6 +175,7 @@ router.get('/dogs/funny', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('blogs-all', {
             blogPosts,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -193,6 +200,7 @@ router.get('/dogs/advice', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('blogs-all', {
             blogPosts,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);

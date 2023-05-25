@@ -1,17 +1,59 @@
+<div>
+    <h2>Make a post!</h2>
+    <form>
+        <div class="field">
+            <label class="label" for="new-title">Title:</label>
+            <div class="control">
+                <input class="input" type="text" id="new-title" />
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="new-body">Body:</label>
+            <div class="control">
+                <input class="input" type="dropdown" id="new-body" />
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="new-category">Pet Category:</label>
+            <div class="select" id="new-category">
+                <select>
+                    <option>Cats</option>
+                    <option>Dogs</option>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="new-type">Post Type:</label>
+            <div class="select" id="new-type">
+                <select>
+                    <option>Advice</option>
+                    <option>Funny</option>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control has-text-centered">
+                <button class="button is-primary" type="submit">Post</button>
+            </div>
+        </div>
+    </form>
+</div>
 
 {{#each blogPosts as |post| }}
 <div class="">
-    <div class="">
-        <h2>{{title}}</h2>
-    </div>
-    <div class="">
-        <h4>Category: {{pet_category}}</h4>
-        <h4>Type: {{post_type}}</h4>
-        {{!-- not sure how to get user name from userID yet --}}
-        <h3>User: {{user_id}}</h3>
-        <p>{{body}}</p>
-    </div>
-
+    <a href="/blogs/{{id}}">
+        <div class="">
+            <h4>{{updatedAt}}</h4>
+            <h2>{{title}}</h2>
+        </div>
+        <div class="">
+            {{!-- insert image --}}
+            <h3>{{User.username}}</h3>
+            <h4>Category: {{pet_category}}</h4>
+            <h4>Type: {{post_type}}</h4>
+            <h4>Number of Comments: {{commentsLength}}</h4>
+        </div>
+    </a>
 </div>
 {{/each}}
 

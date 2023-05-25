@@ -1,24 +1,18 @@
+
+{{#each blogPosts as |post| }}
 <div class="">
     <div class="">
-        <h2>Dumb Cat Moment </h2>
+        <h2>{{title}}</h2>
     </div>
     <div class="">
-        <h4>Category: Cats</h4>
-        <h4>Type: Funny</h4>
+        <h4>Category: {{pet_category}}</h4>
+        <h4>Type: {{post_type}}</h4>
         {{!-- not sure how to get user name from userID yet --}}
-        <h3>User: user1</h3>
-        <h4>Comments: total number </h3>
+        <h3>User: {{user_id}}</h3>
+        <p>{{body}}</p>
     </div>
-    <div class="">
-        <h2> How to feed my cat his meds?</h2>
-    </div>
-    <div class="">
-        <h4>Category: Cats</h4>
-        <h4>Type: Advice</h4>
-        {{!-- not sure how to get user name from userID yet --}}
-        <h3>User: user1</h3>
-        <h4>Comments: total number </h3>
-    </div>
-
 
 </div>
+{{/each}}
+
+<script src="./js/blogPost-all.js"></script>

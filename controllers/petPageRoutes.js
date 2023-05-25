@@ -27,10 +27,28 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+router.get('/all', withAuth, async (req, res) => {
+    try {
+        const petsData = await Pets.findAll();
+
+        // Serialize data so the template can read it
+        const pets = petsData.map((pet) => pet.get({ plain: true }));
+
+        // Pass serialized data and session flag into template
+        res.render('ownerPets', {
+            pets,
+            logged_in: req.session.logged_in,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // pets routes for specific pet
 router.get('/:id', withAuth, async (req, res) => {
     try {
         const petsData = await Pets.findByPk(req.params.id);
+
 
         // Serialize data so the template can read it
         const pets = petsData.get({ plain: true });

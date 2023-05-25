@@ -2,6 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/withAuth');
 
 const { BlogPost, comments } = require('../models');
+const { where } = require('sequelize');
 
 // to get here its localhost.com/blogs/
 
@@ -34,16 +35,19 @@ router.get('/:id', withAuth, async (req, res) => {
         // Get all blogs and JOIN with user data
 
         // TO DO: !!!!! order from last to first?
-        const blogPostsData = [await BlogPost.findByPk(req.params.id, {
-            include: [{ model: comments }],
-            
-        })];
+        const blogPostsData = await BlogPost.findByPk(req.params.id,
+            {
+                include: [{ model: comments }],
+                // where: {
+                //     id: req.params.id,
+                // }
+            });
 
-        console.log(blogPostsData);
+
 
         // Serialize data so the template can read it
-        const blogPosts = blogPostsData.map((post) => post.get({ plain: true }));
-
+        const blogPosts = blogPostsData.get({ plain: true });
+        console.log(blogPosts);
         // Pass serialized data and session flag into template
         res.render('blog-one', {
             blogPosts,

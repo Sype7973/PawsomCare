@@ -15,8 +15,13 @@ const router = require('express').Router();
 
 router.get('/', (req, res) => {
 
-  // need to send it some blog posts
+  if (req.session.logged_in) {
+    res.redirect('/pets');
 
+    return;
+  }
+
+  // TO DO: need to pass it some blog posts
   res.render('homepage');
 
 });
@@ -28,13 +33,15 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('signUp');
+  res.render('signUp', {
+    logged_in: req.session.logged_in
+  });
 });
 
 router.get('/logout', (req, res) => {
   // If the user is already logged in, redirect the request to another route
 
-  res.render('homepage');
+  res.redirect('/');
 });
 
 module.exports = router;

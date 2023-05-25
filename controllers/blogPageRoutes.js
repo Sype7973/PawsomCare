@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/withAuth');
 
-const { BlogPost, comments } = require('../models');
+const { BlogPost, comments, User } = require('../models');
 const { where } = require('sequelize');
 
 // to get here its localhost.com/blogs/
@@ -37,10 +37,7 @@ router.get('/:id', withAuth, async (req, res) => {
         // TO DO: !!!!! order from last to first?
         const blogPostsData = await BlogPost.findByPk(req.params.id,
             {
-                include: [{ model: comments }],
-                // where: {
-                //     id: req.params.id,
-                // }
+                include: [comments, User],
             });
 
 

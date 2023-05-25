@@ -21,7 +21,7 @@ router.put('/:id', async (req, res) => {
         // update a comment by its `id` value
         const updatedComment = await comments.update(
             {
-                comment: req.body.comment,
+                comment_body: req.body.comment_body,
             },
             {
                 where: {

@@ -15,7 +15,7 @@
         {{#each blogPosts.comments as |comment|}}
         {{!-- maybe make this a helper function? --}}
         <h3>User: {{user_id}} username</h3>
-        <h3>{{comment}}</h3>
+        <h3>{{comment_body}}</h3>
         <h4>{{format_time date_created}}</h4>
         {{else}}
         <h4>No Comments Yet</h4>

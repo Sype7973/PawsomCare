@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
         res.status(200).json(newComment);
 
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 
@@ -33,6 +34,7 @@ router.put('/:id', async (req, res) => {
         res.status(200).json(updatedComment);
 
     } catch (err) {
+  
         res.status(500).json(err);
     }
 

@@ -1,28 +1,37 @@
-{{#each pets as |pet|}}
-  <div class="col-md-4">
-    <div class="card mb-4 shadow-sm">
-      <img class="card-img-top" src="{{pet.pet_image_url}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{pet.pet_name}}</h5>
-        <p class="card-text">{{pet.pet_description}}</p>
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            <a href="/pets/{{pet.id}}" class="btn btn-sm btn-outline-secondary">View</a>
-            <a href="/pets/{{pet.id}}/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+<div class="columns is-centered">
+  {{#each pets as |pet|}}
+    <div class="column is-4">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="{{pet.pet_image_url}}" alt="Card image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-5">{{pet.pet_name}}</p>
+              <p class="subtitle is-6">{{pet.pet_description}}</p>
+            </div>
           </div>
-          <small class="text-muted">{{pet.updatedAt}}</small>
+          <div class="content">
+            <div class="buttons">
+              <a href="/pets/{{pet.id}}" class="button is-small is-link">View</a>
+              <a href="/pets/{{pet.id}}/edit" class="button is-small is-link">Edit</a>
+            </div>
+            <small class="has-text-grey">{{pet.updatedAt}}</small>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-{{else}}
-  <div class="col-md-12">
-    <div class="card mb-4 shadow-sm">
-      <div class="card-body">
-        {{!-- redirect to pet sign up? --}}
-        <h5 class="card-title">No Pets</h5>
-        <p class="card-text">You have no pets. <a href="/login">Add a pet</a> to get started.</p>
+  {{else}}
+    <div class="column is-4">
+      <div class="card">
+        <div class="card-content">
+          <h5 class="title is-5">No Pets</h5>
+          <p class="subtitle is-6">You have no pets. <a href="/login">Add a pet</a> to get started.</p>
+        </div>
       </div>
     </div>
-  </div>
-{{/each}}
+  {{/each}}
+</div>

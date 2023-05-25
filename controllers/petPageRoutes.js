@@ -35,7 +35,7 @@ router.get('/all', withAuth, async (req, res) => {
         const pets = petsData.map((pet) => pet.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('ownerPets', {
+        res.render('allPets', {
             pets,
             logged_in: req.session.logged_in,
         });

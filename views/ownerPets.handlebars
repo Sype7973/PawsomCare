@@ -21,7 +21,7 @@
           <div class="buttons">
             {{!-- need to change /edit or take away link and build link into JS --}}
             <a href="/pets/{{pet.id}}" class="button is-small is-link">View</a>
-            <button class="button is-small is-link petEdit" data-pet-id="{{pet.id}}">Edit</button>
+            <a href="/pets/edit/{{pet.id}}" class="button is-small is-link petEdit" data-pet-id="{{pet.id}}">Edit</a>
           </div>
           <small class="has-text-grey">{{pet.updatedAt}}</small>
         </div>

@@ -1,0 +1,64 @@
+{{!-- check boxes for certain fields in req body, everything else string/integer based on model --}}
+<div class="control">
+  <input class="input" type="text" value={{pets.pet_name}} name="petName">
+</div>
+{{!-- pet breed --}}
+<div class="control">
+  <input class="input" type="text" value={{pets.pet_breed}} name="petBreed">
+</div>
+{{!-- pet age --}}
+<div class="control">
+  <input class="input" type="text" value={{pets.pet_age}} name="petAge">
+</div>
+{{!-- pet description, larger text area --}}
+<div class="control">
+  <textarea class="textarea" value={{pets.pet_description}} name="petDescription"></textarea>
+</div>
+{{!-- pet size dropdown with options, small, medium, large --}}
+<div>
+  <select name="petSize">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+  </select>
+</div>
+{{!-- pet allergies --}}
+<div class="control">
+  <input class="input" type="text" value={{pets.pet_allergies}} name="petAllergies">
+</div>
+{{!-- pet medications --}}
+<div class="control">
+  <input class="input" type="text" value={{pets.pet_medications}} name="petMedication">
+</div>
+{{!-- pet exercise --}}
+<div class="control">
+  <input class="input" type="text" value={{pets.pet_exercise}} name="petExercise">
+</div>
+{{!-- pet food --}}
+<div class="control">
+  <input class="input" type="text" value={{pets.pet_food}} name="petFood">
+</div>
+{{!-- pet grooming --}}
+<div class="control">
+  <input class="input" type="text" {{pets.pet_food}} name="petGrooming">
+</div>
+{{!--  pet image upload --}}
+<div class="file">
+  <label class="file-label">
+    <input class="file-input" type="file" name="petImage">
+    <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+        Upload a picture of your pet!
+      </span>
+    </span>
+  </label>
+</div>
+{{!-- submit button that handles all text area --}}
+<div class="control">
+  <button class="button is-primary" id="submitButton">Submit</button>
+</div>
+{{!-- script for sign up --}}
+<script src="/js/petSignUp.js"></script>

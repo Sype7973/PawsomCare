@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   
       try {
         // Send the data to the server using a POST request
-        const response = await fetch('/pets', {
+        const response = await fetch('/api/pets', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -50,13 +50,13 @@ document.addEventListener('DOMContentLoaded', async function() {
   
         // Handle the response from the server
         if (response.ok) {
-          window.location.href = '/success'; // Redirect to success page
+          window.location.href = '/pets'; // Redirect to success page
         } else {
-          console.error(error)
+          console.error("error")
           // Handle the error and provide feedback to the user
         }
       } catch (error) {
-        console.error(error);
+        console.error("error");
         // Handle any network or server errors
       }
     });

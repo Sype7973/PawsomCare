@@ -30,20 +30,20 @@ router.delete('/:id', withAuth, async (req, res) => {
 // create a new pet
 router.post('/', withAuth, async (req, res) => {
     try {
-        const petsData = await Pets.create({
-            // spread syntax to pass in all req.body properties
-            ...req.body,
-            user_id: req.session.user_id,            
-        });
-
-        res.render('petsCard', {
-            petsData,
-        });
-
+      const petsData = await Pets.create({
+        ...req.body,
+        user_id: req.session.user_id,
+      });
+  
+      res.status(201).json(petsData);
+      // Render the 'petsCard' view
+      res.render('petsCard', {
+        petsData,
+      });
     } catch (err) {
-        res.status(400).json(err);
+      res.status(400).json(err);
     }
-});
+  });
 
 router.put('/:id', async (req, res) => {
 

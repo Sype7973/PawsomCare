@@ -1,4 +1,4 @@
-<div class="columns is-centered">
+<div id="petList"class="columns is-centered">
   <a href="/Add-A-Pet">
     <button class="button is-large is-fullwidth is-outlined is-warning">Add a Pet</button>
   </a>
@@ -21,14 +21,13 @@
           <div class="buttons">
             {{!-- need to change /edit or take away link and build link into JS --}}
             <a href="/pets/{{pet.id}}" class="button is-small is-link">View</a>
-            <a href="/pets/{{pet.id}}/edit" class="button is-small is-link">Edit</a>
+            <button class="button is-small is-link petEdit" data-pet-id="{{pet.id}}">Edit</button>
           </div>
           <small class="has-text-grey">{{pet.updatedAt}}</small>
         </div>
       </div>
     </div>
   </div>
-
   {{else}}
   <div class="column is-4">
     <div class="card">
@@ -39,6 +38,5 @@
     </div>
   </div>
   {{/each}}
-
-
 </div>
+<script src="/js/userProfile.js"></script>

@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', async function() {
       event.preventDefault(); // Prevent the default form submission
   
       // Collect the values from the input fields
-      const petName = document.querySelector('input[name="petName"]').value.trim();
-      const petType = document.querySelector('select[name="petType"]').value.trim();
-      const petBreed = document.querySelector('input[name="petBreed"]').value.trim();
-      const petAge = document.querySelector('input[name="petAge"]').value.trim();
-      const petDescription = document.querySelector('textarea[name="petDescription"]').textContent.trim();
-      const petSize = document.querySelector('select[name="petSize"]').value.trim();
-      const petAllergies = document.querySelector('input[name="petAllergies"]').value.trim();
-      const petFood = document.querySelector('input[name="petFood"]').value.trim();
-      const petExcercise = document.querySelector('input[name="petExercise"]').value.trim();
-      const petMedication = document.querySelector('input[name="petMedication"]').value.trim();
-      const petGrooming = document.querySelector('input[name="petGrooming"]').value.trim();
+      const petName = document.querySelector('input[name="petName"]').value;
+      const petType = document.querySelector('select[name="petType"]').value;
+      const petBreed = document.querySelector('input[name="petBreed"]').value;
+      const petAge = document.querySelector('input[name="petAge"]').value;
+      const petDescription = document.querySelector('textarea[name="petDescription"]').value;
+      const petSize = document.querySelector('select[name="petSize"]').value;
+      const petAllergies = document.querySelector('input[name="petAllergies"]').value;
+      const petFood = document.querySelector('input[name="petFood"]').value;
+      const petExcercise = document.querySelector('input[name="petExercise"]').value;
+      const petMedication = document.querySelector('input[name="petMedication"]').value;
+      const petGrooming = document.querySelector('input[name="petGrooming"]').value;
   
       // Collect values for other input fields...
   

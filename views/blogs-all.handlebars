@@ -1,5 +1,5 @@
-<div>
-    <h2 id="user-id" data-user-id="{{user_id}}">Make a post!</h2>
+<div class="container">
+    <h2 id="user-id" data-user-id="{{user_id}}" class="title is-2">Make a post!</h2>
     <form class="post-form">
         <div class="field">
             <label class="label" for="new-title">Title:</label>
@@ -31,18 +31,23 @@
                 </select>
             </div>
         </div>
-        <div class="file">
-            <label class="file-label">
-                <input class="file-input" type="file" name="resume">
-                <span class="file-cta">
-                    <span class="file-icon">
-                        <i class="fas fa-upload"></i>
+        <div class="field">
+            <div class="file has-name">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="resume">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                            Upload a picture
+                        </span>
                     </span>
-                    <span class="file-label">
-                        Upload a picture
+                    <span class="file-name">
+                        No file uploaded
                     </span>
-                </span>
-            </label>
+                </label>
+            </div>
         </div>
         <div class="field">
             <div class="control has-text-centered">
@@ -53,18 +58,19 @@
 </div>
 
 {{#each blogPosts as |post| }}
-<div class="">
+<div class="container">
     <a href="/blogs/{{id}}">
-        <div class="">
-            <h4>{{updatedAt}}</h4>
-            <h2>{{title}}</h2>
-        </div>
-        <div class="">
-            {{!-- insert image --}}
-            <h3>{{User.username}}</h3>
-            <h4>Category: {{pet_category}}</h4>
-            <h4>Type: {{post_type}}</h4>
-            <h4>Number of Comments: {{commentsLength}}</h4>
+        <div class="card">
+            <div class="card-content">
+                <h4 class="is-size-7">{{updatedAt}}</h4>
+                <h2 class="is-size-4">{{title}}</h2>
+            </div>
+            <div class="card-content">
+                <h3 class="is-size-5">{{User.username}}</h3>
+                <h4 class="is-size-6">Category: {{pet_category}}</h4>
+                <h4 class="is-size-6">Type: {{post_type}}</h4>
+                <h4 class="is-size-6">Number of Comments: {{commentsLength}}</h4>
+            </div>
         </div>
     </a>
 </div>

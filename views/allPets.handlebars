@@ -1,31 +1,35 @@
-<div class="columns is-centered">
-  {{#each pets as |pet|}}
-    <div class="column is-4">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="{{pet.pet_image_url}}" alt="Card image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-5">{{pet.pet_name}}</p>
-              <p class="subtitle is-6">{{pet.pet_description}}</p>
+<div class="container" id="custom-container">
+  <div class="columns is-centered is-multiline" style="margin-top: 20px; margin-bottom: 20px;">
+    {{#each pets as |pet|}}
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="{{pet.pet_image_url}}" alt="Card image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-5">{{pet.pet_name}}</p>
+                <p class="subtitle is-6">{{pet.pet_description}}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  {{else}}
-    <div class="column is-4">
-      <div class="card">
-        <div class="card-content">
-          <h5 class="title is-5">Please Sign in to view all our Pet Pals!</h5>
-          <p class="subtitle is-6"><a href="/login">Login/Signup</a></p>
+    {{/each}}
+    {{#unless pets}}
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-content">
+            <h5 class="title is-5">Please Sign in to view all our Pet Pals!</h5>
+            <p class="subtitle is-6"><a href="/login">Login/Signup</a></p>
+          </div>
         </div>
       </div>
-    </div>
-  {{/each}}
-  <button class="button is-large is-fullwidth is-outlined is-warning">Add a Pet</button>
+    {{/unless}}
+  </div>
+  <div class="columns is-centered">
+  </div>
 </div>

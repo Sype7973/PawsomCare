@@ -65,6 +65,15 @@ module.exports = {
     
       return links;
     },
+    placeholderImage: function (petType) {
+      let placeholderImage;
+      if (petType === 'cat') {
+        placeholderImage = 'cat_placeholder.png';
+      } else {
+        placeholderImage = 'dog_placeholder.png';
+      }
+      return placeholderImage;
+    },
 };
 
   

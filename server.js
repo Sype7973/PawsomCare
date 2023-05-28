@@ -51,7 +51,9 @@ const upload = multer({
   }
 })
 
-module.exports.upload = upload;
+module.exports = {
+  upload: upload,
+};
 
 // Sets up session and connect to our Sequelize db
 const sess = {

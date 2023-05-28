@@ -5,7 +5,13 @@
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="{{pet.pet_image_url}}" alt="Card image">
+              {{#if pet.pet_image_url}}
+                <img src="{{pet.pet_image_url}}" alt="Card image">
+              {{else}}
+                {{#with (placeholderImage pet.pet_type)}}
+                  <img src="/img/{{this}}" alt="Placeholder Image">
+                {{/with}}
+              {{/if}}
             </figure>
           </div>
           <div class="card-content">

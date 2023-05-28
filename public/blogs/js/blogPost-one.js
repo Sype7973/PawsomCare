@@ -30,3 +30,38 @@ const commentFormHandler = async (event) => {
 document
     .querySelector('.comment-form')
     .addEventListener('submit', commentFormHandler);
+
+
+const blogID = document.querySelector('#username').getAttribute('data-blog-owner');
+const userID = document.querySelector('#delete-blog').getAttribute('data-user-id');
+
+if (blogID === userID) {
+    document.querySelector('#delete-blog').classList.remove('hide');
+} else {
+    document.querySelector('#delete-blog').classList.add('hide');
+}
+
+document.querySelector('#delete-blog').addEventListener('click', async (event) => {
+
+    event.preventDefault();
+
+    const blogID = document.querySelector('#blog-title').getAttribute('data-blog-id');
+
+    const response = await fetch(`/api/blogPost/${blogID}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+        // If successful, refresh to view comment
+        if (document.querySelector('#category').getAttribute('data-category') === 'Dogs') {
+
+            document.location.replace('/blogs/Dogs/all');
+        } else {
+
+            document.location.replace('/blogs/Cats/all');
+        }
+    } else {
+        alert(response.statusText);
+    }
+});

@@ -174,12 +174,16 @@ router.get('/:pet_category/:post_type', withAuth, async (req, res) => {
 
             })
         );
-
+    
+        post_type = req.params.post_type;
+        pet_category = req.params.pet_category;
         // Pass serialized data and session flag into template
         res.render('blogs-all', {
             blogPosts,
             logged_in: req.session.logged_in,
-            user_id: req.session.user_id,
+            own_user_id: req.session.user_id,
+            pet_category,
+            post_type,
         });
     } catch (err) {
         res.status(500).json(err);

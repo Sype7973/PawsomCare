@@ -75,6 +75,7 @@ body {
 
 #blogs {
   width: 70%;
+  padding-top: 20px;
 }
 
 .blog-post {
@@ -88,4 +89,36 @@ body {
   height: auto;
   width: 150px;
   object-fit: contain;
+}
+
+#blog-body{
+  display: flex;
+}
+
+#blog-body img {
+  height: auto;
+  width: 302px;
+  object-fit: contain;
+}
+
+#blog-body p {
+  padding: 0.75rem;
+}
+
+.hide {
+  display: none;
+}
+
+.card-content {
+  width: 100%;
+}
+
+.delete-blog {
+  margin: 20px;
+  padding: 20px;
+}
+
+.view-blog {
+  margin: 20px;
+  padding: 20px;
 }

@@ -2,18 +2,30 @@
     <div class="card">
         <div class="card-content">
             <h4 class="is-size-7">{{blogPosts.updatedAt}}</h4>
-            <h3 class="is-size-5">{{blogPosts.User.username}}</h3>
+            <h3 class="is-size-5" id="username" data-blog-owner="{{blogPosts.User.id}}">{{blogPosts.User.username}}</h3>
             <h2 id="blog-title" data-blog-id="{{blogPosts.id}}" class="title is-3">{{blogPosts.title}}</h2>
             <div class="columns is-mobile">
                 <div class="column">
-                    <h4 class="is-size-6">Category: {{blogPosts.pet_category}}</h4>
+                    <h4 class="is-size-6" id="category"
+                    data-category="{{blogPosts.pet_category}}">Category: {{blogPosts.pet_category}}</h4>
                 </div>
                 <div class="column">
                     <h4 class="is-size-6">Type: {{blogPosts.post_type}}</h4>
                 </div>
+                <div class="column">
+                    <div id="delete-blog" data-user-id="{{user_id}}">
+                        {{!-- <button class="button is-small is-link">Edit</button> --}}
+                        <button class="button is-small is-danger">Delete</button>
+                    </div>
+
+                </div>
             </div>
-            <img src="{{blogPosts.image_url}}" alt="blog image" />
-            <p>{{blogPosts.body}}</p>
+
+            <div id="blog-body">
+                <img src="{{blogPosts.image_url}}" alt="blog image" />
+                <p>{{blogPosts.body}}</p>
+            </div>
+
         </div>
     </div>
 

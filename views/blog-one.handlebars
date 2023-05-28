@@ -1,16 +1,18 @@
 <div class="container">
     <div class="card">
         <div class="card-content">
-            <h4 class="is-size-7">{{blogPosts.updatedAt}}</h4>
+            <h4 class="is-size-7">{{format_date blogPosts.updatedAt}}</h4>
             <h3 class="is-size-5" id="username" data-blog-owner="{{blogPosts.User.id}}">{{blogPosts.User.username}}</h3>
             <h2 id="blog-title" data-blog-id="{{blogPosts.id}}" class="title is-3">{{blogPosts.title}}</h2>
             <div class="columns is-mobile">
                 <div class="column">
-                    <h4 class="is-size-6" id="category"
-                    data-category="{{blogPosts.pet_category}}">Category: {{blogPosts.pet_category}}</h4>
+                    <h4 class="is-size-6" id="category" data-category="{{blogPosts.pet_category}}">Category:
+                        {{blogPosts.pet_category}}</h4>
                 </div>
                 <div class="column">
                     <h4 class="is-size-6">Type: {{blogPosts.post_type}}</h4>
+                </div>
+                <div class="column">
                 </div>
                 <div class="column">
                     <div id="delete-blog" data-user-id="{{user_id}}">
@@ -29,33 +31,49 @@
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-content">
-            <h3 class="title is-4">Comments</h3>
+    <div class="card comments">
 
-            {{#each commentsArray as |comment|}}
-            <h3>{{User.username}}</h3>
-            <h3>{{comment_body}}</h3>
-            <h4>{{updatedAt}}</h4>
-            {{else}}
-            <h4>No Comments Yet</h4>
-            {{/each}}
+        <h3 class="title is-4">Comments</h3>
 
-            <form class="comment-form" id="user-id" data-user-id="{{user_id}}">
-                <div class="field">
-                    <label class="label" for="new-comment">Leave a comment:</label>
-                    <div class="control">
-                        <input class="textarea" type="text" id="new-comment" />
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control has-text-centered">
-                        <button class="button is-primary" type="submit">Post</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+
+        {{#each commentsArray as |comment|}}
+
+        <div class="one-comment">
+
+            <div class="comment-body">
+ <h3 class="is-size-6"> {{User.username}}</h3>
+
+            <h3 class="is-size-5">{{comment_body}}</h3>
+
+            <h4 class="is-size-7">{{format_date updatedAt}}</h4>
+      
+            </div>
+                     <button class="button is-small is-danger comment-delete" data-comment-user="{{User.id}}"
+                data-id="{{id}}">Delete</button>   
+             </div>
+
+        {{else}}
+        <h4>No Comments Yet</h4>
+
+
+        {{/each}}
     </div>
+    <div class="card-content">
+        <form class="comment-form" id="user-id" data-user-id="{{user_id}}">
+            <div class="field">
+                <label class="label" for="new-comment">Leave a comment:</label>
+                <div class="control">
+                    <input class="textarea" type="text" id="new-comment" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-primary" type="submit">Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 </div>
 
 <script src="./js/blogPost-one.js"></script>

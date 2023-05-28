@@ -65,3 +65,40 @@ document.querySelector('#delete-blog').addEventListener('click', async (event) =
         alert(response.statusText);
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.comment-delete');
+    const userID = document.querySelector('#delete-blog').getAttribute('data-user-id');
+
+    deleteButtons.forEach(button => {
+        const commentOwner = button.getAttribute('data-comment-user');
+        console.log('commentOwner', commentOwner)
+        console.log('userID', userID)
+        if (commentOwner === userID) {
+            button.classList.remove('is-hidden');
+        } else {
+            button.classList.add('is-hidden');
+        }
+    });
+});
+
+const deleteButtons = document.querySelectorAll('.comment-delete');
+
+deleteButtons.forEach(button => {
+  button.addEventListener('click', async (event) => {
+    event.stopPropagation();
+
+    const commentID = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/comments/${commentID}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert(response.statusText);
+    }
+  });
+});

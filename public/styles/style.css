@@ -97,7 +97,7 @@ body {
 
 #blog-body img {
   height: auto;
-  width: 302px;
+  width: 320px;
   object-fit: contain;
 }
 
@@ -109,7 +109,7 @@ body {
   display: none;
 }
 
-.card-content {
+.blog-post .card-content {
   width: 100%;
 }
 
@@ -121,4 +121,27 @@ body {
 .view-blog {
   margin: 20px;
   padding: 20px;
+}
+
+.comments {
+  padding: 30px;
+  width: 100%;
+}
+
+.comment-form {
+  padding-top: 20px;
+}
+
+.comment-delete {
+
+height: auto;
+margin-right: 5px;
+}
+
+.one-comment {
+  display: flex;
+}
+
+.comment-body {
+  width: 100%;
 }

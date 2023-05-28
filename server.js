@@ -7,6 +7,9 @@ const multer = require('multer');
 
 const exphbs = require('express-handlebars');
 const session = require('express-session');
+const handlebars = require('handlebars');
+// for doing if x == y in handlebars
+const handlehelpers = require('handlebars-helpers')();
 
 // import sequelize connection
 const sequelize = require('./config/connection');
@@ -76,6 +79,9 @@ app.use(session(sess));
 
 // Create the Handlebars.js engine object with custom helper functions
 const hbs = exphbs.create({ helpers });
+
+// to include handlebars-helpers to use eq helper in the blogs page
+handlebars.registerHelper(handlehelpers);
 
 // Inform Express.js which template engine we're using
 app.engine('handlebars', hbs.engine);

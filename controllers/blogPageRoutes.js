@@ -2,6 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/withAuth');
 
 const { BlogPost, comments, User } = require('../models');
+const { privateDecrypt } = require('crypto');
 // to get here its localhost.com/blogs/
 
 // !!!! MIGHT BE IRRELEVANT???
@@ -112,6 +113,7 @@ router.get('/:id', withAuth, async (req, res) => {
 
 // Z - route for getting cat or dog blogs that are advice/funny/or all
 router.get('/:pet_category/:post_type', withAuth, async (req, res) => {
+// /:location/:cagory/:difficulty
 
     console.log(req.params.post_type);
     try {
@@ -132,9 +134,9 @@ router.get('/:pet_category/:post_type', withAuth, async (req, res) => {
                 where: {
                     pet_category: req.params.pet_category,
                     post_type: req.params.post_type,
-                    order: [['updatedAt', 'DESC']],
                 },
                 include: [{ model: User }],
+                order: [['updatedAt', 'DESC']],
             });
         }
         // Serialize data so the template can read it

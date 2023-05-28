@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
         res.status(200).json(newBlog);
 
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 
@@ -21,9 +22,7 @@ router.put('/:id', async (req, res) => {
         // update a blog by its `id` value
         const updatedBlog = await BlogPost.update(
             {
-                pet_category: req.body.pet_category,
-                post_type: req.body.post_type,
-                body: req.body.body,
+                ...req.body,
             },
             {
                 where: {

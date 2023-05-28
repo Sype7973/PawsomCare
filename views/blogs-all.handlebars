@@ -1,79 +1,84 @@
-<div class="container">
-    <h2 id="user-id" data-user-id="{{user_id}}" class="title is-2">Make a post!</h2>
-    <form class="post-form">
-        <div class="field">
-            <label class="label" for="new-title">Title:</label>
-            <div class="control">
-                <input class="input" type="text" id="new-title" />
-            </div>
-        </div>
-        <div class="field">
-            <label class="label" for="new-body">Body:</label>
-            <div class="control">
-                <input class="input" type="dropdown" id="new-body" />
-            </div>
-        </div>
-        <div class="field">
-            <label class="label" for="new-category">Pet Category:</label>
-            <div class="select" id="new-category">
-                <select>
-                    <option>Cats</option>
-                    <option>Dogs</option>
-                </select>
-            </div>
-        </div>
-        <div class="field">
-            <label class="label" for="new-type">Post Type:</label>
-            <div class="select" id="new-type">
-                <select>
-                    <option>Advice</option>
-                    <option>Funny</option>
-                </select>
-            </div>
-        </div>
-        <div class="field">
-            <div class="file has-name">
-                <label class="file-label">
-                    <input class="file-input" type="file" name="resume">
-                    <span class="file-cta">
-                        <span class="file-icon">
-                            <i class="fas fa-upload"></i>
-                        </span>
-                        <span class="file-label">
-                            Upload a picture
-                        </span>
-                    </span>
-                    <span class="file-name">
-                        No file uploaded
-                    </span>
-                </label>
-            </div>
-        </div>
-        <div class="field">
-            <div class="control has-text-centered">
-                <button class="button is-primary" type="submit">Post</button>
-            </div>
-        </div>
-    </form>
-</div>
+<div class="container" id="blog-all">
+    <div class="container" id="blogs">
+        <h2 class="title is-2">All Posts</h2>
 
-{{#each blogPosts as |post| }}
-<div class="container">
-    <a href="/blogs/{{id}}">
-        <div class="card">
-            <div class="card-content">
-                <h4 class="is-size-7">{{updatedAt}}</h4>
-                <h2 class="is-size-4">{{title}}</h2>
-            </div>
-            <div class="card-content">
-                <h3 class="is-size-5">{{User.username}}</h3>
-                <h4 class="is-size-6">Category: {{pet_category}}</h4>
-                <h4 class="is-size-6">Type: {{post_type}}</h4>
-                <h4 class="is-size-6">Number of Comments: {{commentsLength}}</h4>
-            </div>
-        </div>
-    </a>
-</div>
-{{/each}}
+        {{#each blogPosts as |post| }}
+        <div class="container">
+            <a href="/blogs/{{id}}">
+                <div class="card blog-post">
+                    <img src="{{image_url}}" alt="blog image" />
+                    <div class="card-content">
+                        <h4 class="is-size-7">{{updatedAt}}</h4>
+                        <h2 class="is-size-4">{{title}}</h2>
 
+                        <h3 class="is-size-5">{{User.username}}</h3>
+                        <h4 class="is-size-6">Category: {{pet_category}}</h4>
+                        <h4 class="is-size-6">Type: {{post_type}}</h4>
+                        <h4 class="is-size-6">Number of Comments: {{commentsLength}}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="container" id="blog-create">
+        <h2 id="user-id" data-user-id="{{user_id}}" class="title is-2">Make a post!</h2>
+        <form class="post-form">
+            <div class="field">
+                <label class="label" for="new-title">Title:</label>
+                <div class="control">
+                    <input class="input" type="text" id="new-title" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="new-body">Body:</label>
+                <div class="control">
+                    <input class="textarea" type="dropdown" id="new-body" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="new-category">Pet Category:</label>
+                <div class="select" id="new-category">
+                    <select>
+                        <option>Cats</option>
+                        <option>Dogs</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="new-type">Post Type:</label>
+                <div class="select" id="new-type">
+                    <select>
+                        <option>Advice</option>
+                        <option>Funny</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="file has-name">
+                    <label class="file-label">
+                        <input class="file-input" type="file" name="resume">
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                                Upload a picture
+                            </span>
+                        </span>
+                        <span class="file-name" id="new-image-url">
+                            No file uploaded
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-primary" type="submit">Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 <script src="./js/blogPost-all.js"></script>

@@ -1,12 +1,13 @@
 .logo {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .signup-column {
-    margin-top: 4rem; /* Adjust the margin as needed */
+  margin-top: 4rem;
+  /* Adjust the margin as needed */
 }
 
 html,
@@ -15,8 +16,10 @@ body {
 }
 
 .Mainpage {
-  min-height: calc(100% - 6rem); /* Subtracting the height of the footer */
-  padding-bottom: 6rem; /* Height of the footer */
+  min-height: calc(100% - 6rem);
+  /* Subtracting the height of the footer */
+  padding-bottom: 6rem;
+  /* Height of the footer */
   flex: 1;
 }
 
@@ -28,26 +31,61 @@ body {
 }
 
 #custom-container {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-  }
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
 
 .description {
-    max-height: 4.5em; /* Set a maximum height for the description */
-    overflow: hidden; /* Hide any overflowing content */
-    text-overflow: ellipsis; /* Add an ellipsis (...) to indicate truncated text */
-    -webkit-line-clamp: 3; /* Limit the number of lines to 3 */
-    -webkit-box-orient: vertical; /* Ensure vertical orientation */
-    display: -webkit-box; /* Display as a box with multiple lines */
-    font-size: 14px; /* Adjust the font size as desired */
-  }
+  max-height: 4.5em;
+  /* Set a maximum height for the description */
+  overflow: hidden;
+  /* Hide any overflowing content */
+  text-overflow: ellipsis;
+  /* Add an ellipsis (...) to indicate truncated text */
+  -webkit-line-clamp: 3;
+  /* Limit the number of lines to 3 */
+  -webkit-box-orient: vertical;
+  /* Ensure vertical orientation */
+  display: -webkit-box;
+  /* Display as a box with multiple lines */
+  font-size: 14px;
+  /* Adjust the font size as desired */
+}
 
 .add-pet-button-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    z-index: 1;
-  }
-  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 1;
+}
+
+#blog-all {
+  display: flex;
+  flex-direction: row;
+}
+
+#blog-create {
+  width: 30%;
+  position: inherit;
+  padding: 20px;
+
+}
+
+#blogs {
+  width: 70%;
+}
+
+.blog-post {
+
+  border-radius: 10px;
+  display: flex;
+
+}
+
+.blog-post img {
+  height: auto;
+  width: 150px;
+  object-fit: contain;
+}

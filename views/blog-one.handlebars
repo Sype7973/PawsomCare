@@ -12,6 +12,7 @@
                     <h4 class="is-size-6">Type: {{blogPosts.post_type}}</h4>
                 </div>
             </div>
+            <img src="{{blogPosts.image_url}}" alt="blog image" />
             <p>{{blogPosts.body}}</p>
         </div>
     </div>
@@ -32,7 +33,7 @@
                 <div class="field">
                     <label class="label" for="new-comment">Leave a comment:</label>
                     <div class="control">
-                        <input class="input" type="text" id="new-comment" />
+                        <input class="textarea" type="text" id="new-comment" />
                     </div>
                 </div>
                 <div class="field">

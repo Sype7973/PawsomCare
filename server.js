@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const multer = require('multer');
 
 const exphbs = require('express-handlebars');
 const session = require('express-session');

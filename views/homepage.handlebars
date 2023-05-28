@@ -1,0 +1,68 @@
+<section class="hero has-background-warning-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Welcome to our Pet lifestyle App!
+      </h1>
+      <h2 class="subtitle">
+        Track your pet's well-being and lifestyle, and connect with other pet owners.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <p class="title">
+              Blog Post
+            </p>
+            {{#with (getRandomBlogPost)}}
+              <p>{{this.title}}</p>
+              <p>{{this.body}}</p>
+            {{/with}}
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <p class="title">
+              Pet of the Day
+            </p>
+            {{#with (getRandomPet)}}
+              <div class="column is-4">
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="{{pet_image_url}}" alt="Card image">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-5">{{pet_name}}</p>
+                        <p class="subtitle is-6">{{pet_description}}</p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <small class="has-text-grey">{{updatedAt}}</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/with}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="has-text-centered">
+      <p>
+        Join us now and start tracking your pet's journey!
+      </p>
+      <a href="http://localhost:8080/login" class="button is-primary">Sign Up</a>
+    </div>
+  </div>
+</section>

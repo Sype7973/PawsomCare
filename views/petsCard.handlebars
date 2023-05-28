@@ -1,24 +1,75 @@
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          {{!-- handlebars image link --}}
-        </figure>
+<div class="columns">
+  <div class="column is-three-quarters" style="padding-top: 20px;">
+    <div class="container has-text-centered">
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-128x128">
+                <img src="{{pets.pet_image_url}}" alt="Pet Image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">{{pets.pet_name}}</p>
+              <p class="subtitle is-6">{{pets.pet_breed}}</p>
+            </div>
+          </div>
+          <div class="content">
+            <div class="columns">
+              <div class="column is-one-third">
+                <p><strong>Description:</strong></p>
+                <p>{{pets.pet_description}}</p>
+              </div>
+              <div class="column is-one-third">
+                <p><strong>Age:</strong></p>
+                <p>{{pets.pet_age}}</p>
+                <p><strong>Size:</strong></p>
+                <p>{{pets.pet_size}}</p>
+              </div>
+              <div class="column is-one-third">
+                <p><strong>Allergies:</strong></p>
+                <p>{{pets.pet_allergies}}</p>
+                <p><strong>Medications:</strong></p>
+                <p>{{pets.pet_medications}}</p>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-one-third">
+                <p><strong>Exercise:</strong></p>
+                <p>{{pets.pet_exercise}}</p>
+              </div>
+              <div class="column is-one-third">
+                <p><strong>Food:</strong></p>
+                <p>{{pets.pet_food}}</p>
+              </div>
+              <div class="column is-one-third">
+                <p><strong>Grooming:</strong></p>
+                <p>{{pets.pet_grooming}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="media-content">
-        <p class="title is-4">{{pets.pet_name}}</p>
-        <p class="subtitle is-6">{{pets.pet_breed}}</p>
-      </div>
+      <a href="http://localhost:8080/pets" class="button is-info is-large" style="margin-top: 10px;">Back</a>
     </div>
-    <div class="content">
-        <p>{{pets.pet_description}}</p>
-        <p>{{pets.pet_age}}</p>
-        <p>{{pets.pet_size}}</p>
-        <p>{{pets.pet_allergies}}</p>
-        <p>{{pets.pet_medications}}</p>
-        <p>{{pets.pet_exercise}}</p>
-        <p>{{pets.pet_food}}</p>
-        <p>{{pets.pet_grooming}}</p>
+  </div>
+  <div class="column" style="padding-top: 20px;">
+    <div class="card">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-128x128">
+              <img src="placeholder-image.jpg" alt="Placeholder Image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">Links and Location</p>
+          </div>
+        </div>
+        <div class="content">
+          <!-- Add your links and Google Maps location here -->
+        </div>
+      </div>
     </div>
   </div>
 </div>

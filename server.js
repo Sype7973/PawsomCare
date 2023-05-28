@@ -4,6 +4,7 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const multer = require('multer');
 
+
 const exphbs = require('express-handlebars');
 const session = require('express-session');
 
@@ -16,6 +17,38 @@ const morgan = require('morgan')
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+// multer storage engine
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, '/resources/uploads')
+  },
+  filename: function (req, file, cb) {
+    const mimeExt ={
+      'image/jpeg': '.jpeg',
+      'image/png': '.png',
+      'image/gif': '.gif',
+      'image/jpg': '.jpg'
+    }
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    cb(null, file.fieldname + '-' + uniqueSuffix)
+  }
+})
+
+const upload = multer({ 
+  storage: storage,
+  fileFilter:(req, file, cb) => {
+    if (file.mimetype !== 'image/png'
+      || file.mimetype !== 'image/jpeg'
+      || file.mimetype !== 'image/gif'
+      || file.mimetype !== 'image/jpg') {
+      return cb(null, false)
+    }
+    cb(null, true)
+    req.fileValidationError = 'Unfortunately, the file type you are trying to upload is not supported. Please try again with a .png, .jpeg, .jpg, or .gif file.'
+  }
+})
+
+module.exports.upload = upload;
 
 // Sets up session and connect to our Sequelize db
 const sess = {
@@ -52,9 +85,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use(routes);
+
 
 // sync sequelize models to the database, then turn on the server
 sequelize.sync().then(() => {
   app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
 });
+

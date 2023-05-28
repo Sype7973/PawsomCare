@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/withAuth');
-
 const { Pets } = require('../../models');
+// imported multer middleware
+const upload = require('../../server.js').upload;
 
 // delete a pet 
 router.delete('/:id', withAuth, async (req, res) => {
@@ -28,6 +29,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 // create a new pet
+// multer upload syntax should be added here as: upload.single('pet_image_url')
 router.post('/', withAuth, async (req, res) => {
     try {
       const petsData = await Pets.create({

@@ -43,7 +43,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     // delete comment by its `id` value
     try {
-        const deletedComment = await BlogPost.destroy({
+        const deletedComment = await comments.destroy({
             where: {
                 id: req.params.id,
             },
@@ -51,6 +51,7 @@ router.delete('/:id', async (req, res) => {
 
         res.status(200).json(deletedComment);
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });

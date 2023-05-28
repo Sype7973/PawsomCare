@@ -1,3 +1,4 @@
+<div class="container is-flex is-flex-direction-column is-justify-content-between" style="min-height: 100vh;">
 <div class="columns">
   <div class="column is-three-quarters" style="padding-top: 20px;">
     <div class="container has-text-centered">
@@ -53,23 +54,22 @@
       <a href="http://localhost:8080/pets" class="button is-info is-large" style="margin-top: 10px;">Back</a>
     </div>
   </div>
-  <div class="column" style="padding-top: 20px;">
-    <div class="card">
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-128x128">
-              <img src="placeholder-image.jpg" alt="Placeholder Image">
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title is-4">Links and Location</p>
-          </div>
+<div class="column" style="padding-top: 20px;">
+  <div class="card">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
         </div>
-        <div class="content">
-          <!-- Add your links and Google Maps location here -->
+        <div class="media-content">
+          <p class="title is-4">Links and Location</p>
+        </div>
+      </div>
+      <div class="content">
+        <div class="buttons is-rounded is-large is-centered is-flex-direction-column " id="petLinks">
+          {{{generateLinks pets.pet_type}}}
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>

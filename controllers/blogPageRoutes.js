@@ -87,6 +87,7 @@ router.get('/:id', withAuth, async (req, res) => {
                 blogPost_id: blogPosts.id,
             },
             include: [{ model: User }],
+            order: [['updatedAt', 'DESC']],
         });
 
         // Serialize data so the template can read it
@@ -124,12 +125,14 @@ router.get('/:pet_category/:post_type', withAuth, async (req, res) => {
                     pet_category: req.params.pet_category,
                 },
                 include: [{ model: User }],
+                order: [['updatedAt', 'DESC']],
             });
         } else {
             blogPostsData = await BlogPost.findAll({
                 where: {
                     pet_category: req.params.pet_category,
                     post_type: req.params.post_type,
+                    order: [['updatedAt', 'DESC']],
                 },
                 include: [{ model: User }],
             });

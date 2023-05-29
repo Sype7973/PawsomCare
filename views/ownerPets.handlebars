@@ -1,5 +1,5 @@
 <div class="container">
-  <div id="petList" class="columns is-multiline">
+  <div id="petList" class="columns is-multiline is-justify-content-center is-flex-wrap-wrap">
     {{#each pets as |pet|}}
       <div class="column is-4">
         <div class="card my-4 py-4 is-flex-grow-1">
@@ -17,8 +17,8 @@
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="title is-5">{{pet.pet_name}}</p>
-                <p class="subtitle is-6">{{pet.pet_description}}</p>
+                <p class="title is-5" id="petName">{{pet.pet_name}}</p>
+                <p class="subtitle is-6" id="petDescription">{{pet.pet_description}}</p>
               </div>
             </div>
             <div class="content">

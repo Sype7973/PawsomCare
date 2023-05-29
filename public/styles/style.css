@@ -184,3 +184,12 @@ a {
   font-size: larger;
 
 }
+.navbar-menu{
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+#navBarBanner {
+  height: 80px;
+  width: 100%;
+  margin-bottom: 20px;
+}

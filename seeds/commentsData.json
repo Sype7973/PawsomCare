@@ -1,23 +1,23 @@
 [
     {
-      "comment_body": "Hahahahah!",
+      "comment_body": "Hahahahah! My cat just started eaiting it",
       "blogPost_id": 1,
       "user_id": 2
     },
     {
-      "comment_body": "Hhehehehehehe!",
+      "comment_body": "Isnt that a waste of cheese?",
       "blogPost_id": 1,
       "user_id": 3
     },
     {
       "comment_body": "nooooooooooo!",
-      "blogPost_id": 2,
-      "user_id": 2
+      "blogPost_id": 4,
+      "user_id": 1
     },
     {
-      "comment_body": "oh my goodnesssss!",
-      "blogPost_id": 2,
-      "user_id": 2
+      "comment_body": "Watch your step",
+      "blogPost_id": 4,
+      "user_id": 3
     }
   ]
   

@@ -28,20 +28,28 @@ router.get('/', async (req, res) => {
       let maxId;
       let randomId;
       while (!randomPost) {
-        maxId = await BlogPost.max('id');
-        randomId = Math.floor(Math.random() * maxId) + 1;
-        const randomPostData = await BlogPost.findByPk(randomId);
-        randomPost = randomPostData.get({ plain: true });
+
+        const allPostsData = await BlogPost.findAll();
+        const allPosts = allPostsData.map((post) => post.get({ plain: true }));
+
+        maxId = allPosts.length;
+        randomId = Math.floor(Math.random() * maxId);
+
+        randomPost = allPosts[randomId];
       }
 
       console.log(randomPost);
 
       let randomPet = null;
       while (!randomPet) {
-        maxId = await Pets.max('id');
-        randomId = Math.floor(Math.random() * maxId) + 1;
-        const randomPetData = await Pets.findByPk(randomId);
-        randomPet = randomPetData.get({ plain: true });
+
+        const allPetsData = await Pets.findAll();
+        const allPets = allPetsData.map((pet) => pet.get({ plain: true }));
+
+        maxId = allPets.length;
+        randomId = Math.floor(Math.random() * maxId);
+        
+        randomPet = allPets[randomId];
       }
       console.log(randomPet);
 

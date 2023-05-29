@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/withAuth');
 
-const { BlogPost, comments, User } = require('../models');
+const { BlogPost, comments, User } = require('../Models');
 const { privateDecrypt } = require('crypto');
 // to get here its localhost.com/blogs/
 
@@ -88,7 +88,6 @@ router.get('/:id', withAuth, async (req, res) => {
                 blogPost_id: blogPosts.id,
             },
             include: [{ model: User }],
-            order: [['updatedAt', 'DESC']],
         });
 
         // Serialize data so the template can read it

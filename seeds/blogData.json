@@ -2,8 +2,8 @@
   {
     "pet_category": "Cats",
     "post_type": "Funny",
-    "title": "Biso did something silly",
-    "body": "He got stuck in my shoe",
+    "title": "Has anyone tried the cheese trend?",
+    "body": "I dropped a slice of cheese on Biso's face, and it was the most hilarious thing ever!",
     "user_id": 1,
     "image_url": "./img/cat-placeholder.png"
   },
@@ -18,8 +18,8 @@
   {
     "pet_category": "Dogs",
     "post_type": "Advice",
-    "title": "How to make my dog stop pooping on the carpet?",
-    "body": "It's like he's a poop machine!",
+    "title": "How to make my puppy stop eating my shoes?",
+    "body": "It's like he's a shredding machine!",
     "user_id": 2,
     "image_url": "./img/dog-placeholder.png"
   },

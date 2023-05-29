@@ -20,9 +20,7 @@ body {
 
 .Mainpage {
   min-height: calc(100% - 6rem);
-  /* Subtracting the height of the footer */
   padding-bottom: 6rem;
-  /* Height of the footer */
   flex: 1;
 }
 
@@ -39,19 +37,12 @@ body {
 
 .description {
   max-height: 4.5em;
-  /* Set a maximum height for the description */
   overflow: hidden;
-  /* Hide any overflowing content */
   text-overflow: ellipsis;
-  /* Add an ellipsis (...) to indicate truncated text */
   -webkit-line-clamp: 3;
-  /* Limit the number of lines to 3 */
   -webkit-box-orient: vertical;
-  /* Ensure vertical orientation */
   display: -webkit-box;
-  /* Display as a box with multiple lines */
   font-size: 14px;
-  /* Adjust the font size as desired */
 }
 
 
@@ -63,16 +54,6 @@ body {
   padding: 20px;
   z-index: 1;
 }
-
-/* #petLinks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
-  } */
 
 #blog-all {
   display: flex;
@@ -158,6 +139,24 @@ body {
   width: 100%;
 }
 
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+#petCardName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-right: 140px;
+
 /* body {
   background-color: #f4cdb3;
 } */
@@ -183,4 +182,5 @@ a {
   padding: 20px;
   font-weight: bold;
   font-size: larger;
+
 }

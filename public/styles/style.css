@@ -20,8 +20,13 @@ body {
 
 .Mainpage {
   min-height: calc(100% - 6rem);
+  /* height: inherit; */
   padding-bottom: 6rem;
   flex: 1;
+}
+
+#petCard-page{
+  height: inherit;
 }
 
 .footer {
@@ -185,13 +190,18 @@ a {
 
 }
 .navbar-menu{
-  font-family: 'Nunito', sans-serif;
   font-weight: bold;
 }
 #navBarBanner {
   height: 80px;
   width: 100%;
   margin-bottom: 20px;
+}
+
+p, button, a, label,
+h1, h2, h3, h4, h5, h6,
+.card, .hero-body, .navbar-menu {
+  font-family: 'Nunito', sans-serif;
 }
 #Veterinarians {
   text-align: center;

@@ -24,7 +24,7 @@
                 <div class="column">
                     <div id="delete-blog" data-user-id="{{user_id}}">
                         {{!-- <button class="button is-small is-link">Edit</button> --}}
-                        <button class="button is-small is-danger blog-delete">Delete</button>
+                        <button class="button is-small is-danger p-4 is-size-6 is-fullwidth">Delete</button>
                     </div>
 
                 </div>
@@ -55,7 +55,7 @@
                 <h4 class="is-size-7">{{format_date updatedAt}}</h4>
 
             </div>
-            <button class="button is-small is-danger comment-delete" data-comment-user="{{User.id}}"
+            <button class="button is-small is-danger comment-delete p-4 is-size-6" data-comment-user="{{User.id}}"
                 data-id="{{id}}">Delete</button>
         </div>
 
@@ -75,7 +75,7 @@
             </div>
             <div class="field">
                 <div class="control has-text-centered">
-                    <button class="button is-primary" type="submit">Post</button>
+                    <button class="button is-primary p-4 is-size-6 is-fullwidth" type="submit">Post</button>
                 </div>
             </div>
         </form>

@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
       // Handle the response from the server
       if (response.ok) {
-        window.location.href = '/pets'; // Redirect to success page
+        document.location.replace('/pets'); // Redirect to success page
       } else {
         console.error("error")
         // Handle the error and provide feedback to the user

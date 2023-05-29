@@ -22,10 +22,10 @@
               </div>
             </div>
             <div class="content">
-              <div class="buttons">
-                <a href="/pets/{{pet.id}}" class="button is-small is-link">View</a>
-                <button class="button is-small is-link petEdit" data-pet-id="{{pet.id}}">Edit</button>
-                <button class="button is-small is-danger petDelete" data-pet-id="{{pet.id}}">Delete</button>
+              <div class="buttons is-centered" id="petCardButtons">
+                <a href="/pets/{{pet.id}}" class="button is-medium is-link">View</a>
+                <button class="button is-medium is-link petEdit"  data-pet-id="{{pet.id}}">Edit</button>
+                <button class="button is-medium is-danger petDelete" data-pet-id="{{pet.id}}">Delete</button>
               </div>
               <small class="has-text-grey">{{pet.updatedAt}}</small>
             </div>

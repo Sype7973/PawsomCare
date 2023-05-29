@@ -1,4 +1,4 @@
-const { BlogPost, Pets } = require('../models');
+const { BlogPost, Pets } = require('../Models');
 
 
 module.exports = {

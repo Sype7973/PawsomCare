@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/withAuth');
 
-const { BlogPost, comments, User } = require('../models');
+const { BlogPost, comments, User } = require('../Models');
 const { privateDecrypt } = require('crypto');
 // to get here its localhost.com/blogs/
 

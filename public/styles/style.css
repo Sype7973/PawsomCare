@@ -20,8 +20,13 @@ body {
 
 .Mainpage {
   min-height: calc(100% - 6rem);
+  /* height: inherit; */
   padding-bottom: 6rem;
   flex: 1;
+}
+
+#petCard-page{
+  height: inherit;
 }
 
 .footer {

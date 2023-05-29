@@ -2,15 +2,22 @@
     <div class="card">
         <div class="card-content">
             <h4 class="is-size-7">{{format_date blogPosts.updatedAt}}</h4>
-            <h3 class="is-size-5" id="username" data-blog-owner="{{blogPosts.User.id}}">{{blogPosts.User.username}}</h3>
-            <h2 id="blog-title" data-blog-id="{{blogPosts.id}}" class="title is-3">{{blogPosts.title}}</h2>
+            <h3 class="is-size-5 has-text-weight-light has-text-success is-underlined mt-2" id="username"
+                data-blog-owner="{{blogPosts.User.id}}">
+                {{blogPosts.User.username}}</h3>
+            <h2 id="blog-title" data-blog-id="{{blogPosts.id}}" class="title is-2 mt-2">
+                {{blogPosts.title}}</h2>
             <div class="columns is-mobile">
                 <div class="column">
-                    <h4 class="is-size-6" id="category" data-category="{{blogPosts.pet_category}}">Category:
+                    <h4 class="is-size-6" id="category" data-category="{{blogPosts.pet_category}}">
+                        <span class="has-text-weight-bold">Category:</span>
                         {{blogPosts.pet_category}}</h4>
                 </div>
                 <div class="column">
-                    <h4 class="is-size-6">Type: {{blogPosts.post_type}}</h4>
+                    <h4 class="is-size-6">
+                        <span class="has-text-weight-bold">Type:</span> 
+                        {{blogPosts.post_type}}
+                        </h4>
                 </div>
                 <div class="column">
                 </div>
@@ -30,27 +37,27 @@
 
         </div>
     </div>
-
+    <hr>
     <div class="card comments">
 
-        <h3 class="title is-4">Comments</h3>
+        <h3 class="title is-4 mt-2">Comments</h3>
 
 
         {{#each commentsArray as |comment|}}
 
-        <div class="one-comment">
+        <div class="one-comment mt-2">
 
             <div class="comment-body">
- <h3 class="is-size-6"> {{User.username}}</h3>
+                <h3 class="is-size-6 has-text-weight-light has-text-success is-underlined"> {{User.username}}</h3>
 
-            <h3 class="is-size-5">{{comment_body}}</h3>
+                <h3 class="is-size-5">{{comment_body}}</h3>
 
-            <h4 class="is-size-7">{{format_date updatedAt}}</h4>
-      
+                <h4 class="is-size-7">{{format_date updatedAt}}</h4>
+
             </div>
-                     <button class="button is-small is-danger comment-delete" data-comment-user="{{User.id}}"
-                data-id="{{id}}">Delete</button>   
-             </div>
+            <button class="button is-small is-danger comment-delete" data-comment-user="{{User.id}}"
+                data-id="{{id}}">Delete</button>
+        </div>
 
         {{else}}
         <h4>No Comments Yet</h4>

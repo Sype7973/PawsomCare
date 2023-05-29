@@ -88,7 +88,6 @@ router.get('/:id', withAuth, async (req, res) => {
                 blogPost_id: blogPosts.id,
             },
             include: [{ model: User }],
-            order: [['updatedAt', 'DESC']],
         });
 
         // Serialize data so the template can read it

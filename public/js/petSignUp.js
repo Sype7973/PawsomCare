@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       // Send the data to the server using a POST request
       const response = await fetch('/api/pets', {
         method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify(formData)
       });
 

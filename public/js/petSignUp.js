@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     let pet_image_url;
 
     if (petType === 'cat') {
-      pet_image_urll = './img/cat-placeholder.png';
+      pet_image_url = './img/cat-placeholder.png';
     } else {
       pet_image_url = './img/dog-placeholder.png';
     }

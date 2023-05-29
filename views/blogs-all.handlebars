@@ -22,21 +22,24 @@
         {{#each blogPosts as |post| }}
         <div class="container">
             <a href="/blogs/{{id}}">
-                <div class="card blog-post">
-                    <img src="{{image_url}}" alt="blog image" />
-                    <div class="card-content">
-                        <h4 class="is-size-7">{{format_date updatedAt}}</h4>
-                        <h2 class="is-size-4">{{title}}</h2>
+                <div class="card">
+                    <div class="blog-post">
+                        <img src="{{image_url}}" alt="blog image" />
+                        <div class="card-content">
+                            <h4 class="is-size-7">{{format_date updatedAt}}</h4>
+                            <h2 class="is-size-4">{{title}}</h2>
 
-                        <h3 class="is-size-5">{{User.username}}</h3>
-                        <h4 class="is-size-6">Category: {{pet_category}}</h4>
-                        <h4 class="is-size-6">Type: {{post_type}}</h4>
-                        <h4 class="is-size-6">Number of Comments: {{commentsLength}}</h4>
+                            <h3 class="is-size-5">{{User.username}}</h3>
+                            <h4 class="is-size-6">Category: {{pet_category}}</h4>
+                            <h4 class="is-size-6">Type: {{post_type}}</h4>
+                            <h4 class="is-size-6">Number of Comments: {{commentsLength}}</h4>
+                        </div>
                     </div>
-                    <button href="/blogs/{{id}}"class="button is-small is-info view-blog " data-blog-id="{{id}}">View</button>
-                        <button class="button is-small is-danger delete-blog is-hidden" data-blog-id="{{id}}"
-                            data-blog-owner="{{User.id}}">Delete</button>
-                    
+                    <button href="/blogs/{{id}}" class="button is-small is-info view-blog "
+                        data-blog-id="{{id}}">View</button>
+                    <button class="button is-small is-danger delete-blog is-hidden" data-blog-id="{{id}}"
+                        data-blog-owner="{{User.id}}">Delete</button>
+
 
                 </div>
             </a>

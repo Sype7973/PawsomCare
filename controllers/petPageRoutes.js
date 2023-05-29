@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/withAuth');
 
-const { Pets } = require('../models');
+const { Pets } = require('../Models');
 
 // to get here its localhost.com/pets/
 

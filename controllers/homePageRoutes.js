@@ -12,7 +12,7 @@
 // this needs to be coded to display the homepage / slide 1 
 
 const router = require('express').Router();
-const { Pets, BlogPost } = require('../models');
+const { Pets, BlogPost } = require('../Models');
 
 router.get('/', async (req, res) => {
 

@@ -19,10 +19,11 @@
             <p class="title">
               Blog Post
             </p>
-            {{#with (getRandomBlogPost)}}
-              <p>{{this.title}}</p>
-              <p>{{this.body}}</p>
-            {{/with}}
+            <p class="is-size-7">{{format_date randomPost.updatedAt}}</p>
+            <p class="is-size-4"><b>{{randomPost.title}}</b></p>
+            <p>{{randomPost.body}}</p>
+            <img src="{{randomPost.image_url}}" alt="blog post image" />
+
           </div>
         </div>
       </div>
@@ -32,28 +33,26 @@
             <p class="title">
               Pet of the Day
             </p>
-            {{#with (getRandomPet)}}
-              <div class="column is-4">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <img src="{{pet_image_url}}" alt="Card image">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content">
-                        <p class="title is-5">{{pet_name}}</p>
-                        <p class="subtitle is-6">{{pet_description}}</p>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <small class="has-text-grey">{{updatedAt}}</small>
-                    </div>
+
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="{{randomPet.pet_image_url}}" alt="Card image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-5">{{randomPet.pet_name}}</p>
+                    <p class="subtitle is-6">{{randomPet.pet_description}}</p>
                   </div>
                 </div>
+                {{!-- <div class="content">
+                  <small class="has-text-grey">{{randomPet.updatedAt}}</small>
+                </div> --}}
               </div>
-            {{/with}}
+            </div>
+
           </div>
         </div>
       </div>

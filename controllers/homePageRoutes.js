@@ -12,8 +12,9 @@
 // this needs to be coded to display the homepage / slide 1 
 
 const router = require('express').Router();
+const { Pets, BlogPost } = require('../models');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
 
   if (req.session.logged_in) {
     res.redirect('/pets');
@@ -21,10 +22,42 @@ router.get('/', (req, res) => {
     return;
   }
 
-  // TO DO: need to pass it some blog posts
-  res.render('homepage');
+    try {
+      let randomPost = null;
 
-});
+      let maxId;
+      let randomId;
+      while (!randomPost) {
+        maxId = await BlogPost.max('id');
+        randomId = Math.floor(Math.random() * maxId) + 1;
+        const randomPostData = await BlogPost.findByPk(randomId);
+        randomPost = randomPostData.get({ plain: true });
+      }
+
+      console.log(randomPost);
+
+      let randomPet = null;
+      while (!randomPet) {
+        maxId = await Pets.max('id');
+        randomId = Math.floor(Math.random() * maxId) + 1;
+        const randomPetData = await Pets.findByPk(randomId);
+        randomPet = randomPetData.get({ plain: true });
+      }
+      console.log(randomPet);
+
+      res.render('homepage', {
+        logged_in: req.session.logged_in,
+        randomPost,
+        randomPet
+      });
+
+    } catch (error) {
+      console.error('Error fetching random blog post:', error);
+      res.status(500).json(error);
+    }
+  },
+
+);
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

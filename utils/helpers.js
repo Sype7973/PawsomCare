@@ -1,6 +1,3 @@
-const { BlogPost, Pets } = require('../Models');
-
-
 module.exports = {
 
     format_date: (date) => {

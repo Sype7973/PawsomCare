@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/withAuth');
-const { Pets } = require('../../models');
+const { Pets } = require('../../Models');
 // imported multer middleware
 const upload = require('../../server');
 

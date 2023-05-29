@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
         res.status(200).json(newComment);
 
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 
@@ -21,7 +22,7 @@ router.put('/:id', async (req, res) => {
         // update a comment by its `id` value
         const updatedComment = await comments.update(
             {
-                comment: req.body.comment,
+                comment_body: req.body.comment_body,
             },
             {
                 where: {
@@ -33,6 +34,7 @@ router.put('/:id', async (req, res) => {
         res.status(200).json(updatedComment);
 
     } catch (err) {
+  
         res.status(500).json(err);
     }
 
@@ -41,7 +43,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     // delete comment by its `id` value
     try {
-        const deletedComment = await BlogPost.destroy({
+        const deletedComment = await comments.destroy({
             where: {
                 id: req.params.id,
             },
@@ -49,6 +51,7 @@ router.delete('/:id', async (req, res) => {
 
         res.status(200).json(deletedComment);
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });

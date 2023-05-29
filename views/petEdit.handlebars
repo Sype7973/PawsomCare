@@ -1,52 +1,61 @@
 <div class="container">
   <div class="columns is-centered">
     <div class="column is-half">
-      <!-- Pet Name -->
+      <!-- check boxes for certain fields in req body, everything else string/integer based on model -->
+      <!-- pet id container to store pet id to retrieve -->
+      <div id="petIdContainer" data-pet-id="{{pets.id}}"></div>
+
+      <!-- pet name -->
       <div class="field">
         <label class="label">Pet Name</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Pet Name" name="petName">
+          <input class="input" type="text" value="{{pets.pet_name}}" name="petName">
         </div>
       </div>
 
-      <!-- Pet Type -->
+      <!-- pet type -->
       <div class="field">
         <label class="label">Pet Type</label>
         <div class="control">
           <div class="select">
             <select name="petType">
-              <option value="dog">Dog</option>
+              {{#isEqual pets.pet_type "===" "dog"}}
+              <option value="dog" selected>Dog</option>
               <option value="cat">Cat</option>
+              {{else}}
+              <option value="dog">Dog</option>
+              <option value="cat" selected>Cat</option>
+              {{/isEqual}}
             </select>
           </div>
         </div>
       </div>
 
-      <!-- Pet Breed -->
+      <!-- pet breed -->
       <div class="field">
         <label class="label">Pet Breed</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Pet Breed" name="petBreed">
+          <input class="input" type="text" value="{{pets.pet_breed}}" name="petBreed">
         </div>
       </div>
 
-      <!-- Pet Age -->
+      <!-- pet age -->
       <div class="field">
         <label class="label">Pet Age</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Pet Age" name="petAge">
+          <input class="input" type="text" value="{{pets.pet_age}}" name="petAge">
         </div>
       </div>
 
-      <!-- Pet Description -->
+      <!-- pet description, larger text area -->
       <div class="field">
         <label class="label">Pet Description</label>
         <div class="control">
-          <textarea class="textarea" placeholder="Pet Description" name="petDescription"></textarea>
+          <textarea class="textarea" name="petDescription">{{pets.pet_description}}</textarea>
         </div>
       </div>
 
-      <!-- Pet Size -->
+      <!-- pet size dropdown with options, small, medium, large -->
       <div class="field">
         <label class="label">Pet Size</label>
         <div class="control">
@@ -60,49 +69,49 @@
         </div>
       </div>
 
-      <!-- Pet Allergies -->
+      <!-- pet allergies -->
       <div class="field">
         <label class="label">Pet Allergies</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Pet Allergies" name="petAllergies">
+          <input class="input" type="text" value="{{pets.pet_allergies}}" name="petAllergies">
         </div>
       </div>
 
-      <!-- Pet Medications -->
+      <!-- pet medications -->
       <div class="field">
-        <label class="label">Pet Medications</label>
+        <label class="label">Pet Medication</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Pet Medications" name="petMedication">
+          <input class="input" type="text" value="{{pets.pet_medication}}" name="petMedication">
         </div>
       </div>
 
-      <!-- Pet Exercise -->
+      <!-- pet exercise -->
       <div class="field">
         <label class="label">Pet Exercise</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Pet Exercise" name="petExercise">
+          <input class="input" type="text" name="petExercise" value="{{pets.pet_excercise}}">
         </div>
       </div>
 
-      <!-- Pet Food -->
+      <!-- pet food -->
       <div class="field">
         <label class="label">Pet Food</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Pet Food" name="petFood">
+          <input class="input" type="text" value="{{pets.pet_food}}" name="petFood">
         </div>
       </div>
 
-      <!-- Pet Grooming -->
+      <!-- pet grooming -->
       <div class="field">
         <label class="label">Pet Grooming</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Pet Grooming" name="petGrooming">
+          <input class="input" type="text" value="{{pets.pet_grooming}}" name="petGrooming">
         </div>
       </div>
 
-      <!-- Pet Image Upload -->
+      <!-- pet image upload -->
       <div class="field">
-        <label class="label">Pet Image Upload</label>
+        <label class="label">Pet Image</label>
         <div class="file">
           <label class="file-label">
             <input class="file-input" type="file" name="petImage">
@@ -118,15 +127,15 @@
         </div>
       </div>
 
-      <!-- Submit Button -->
+      <!-- submit button that handles all text area -->
       <div class="field">
         <div class="control">
           <button class="button is-primary" id="submitButton">Submit</button>
         </div>
       </div>
 
-      <!-- Script for sign up -->
-      <script src="/js/petSignUp.js"></script>
+      <!-- script for sign up -->
+      <script src="/js/petEdit.js"></script>
     </div>
   </div>
 </div>

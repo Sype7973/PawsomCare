@@ -13,52 +13,61 @@
 <section class="section">
   <div class="container">
     <div class="columns">
-      <div class="column">
-        <div class="card">
-          <div class="card-content" background>
-            <p class="title">
-              Blog Post
-            </p>
-            <p class="is-size-7">{{format_date randomPost.updatedAt}}</p>
-            <p class="is-size-4"><b>{{randomPost.title}}</b></p>
-            <p>{{randomPost.body}}</p>
-            <img src="{{randomPost.image_url}}" alt="blog post image" />
 
-          </div>
-        </div>
-      </div>
       <div class="column">
         <div class="card">
           <div class="card-content">
-            <p class="title">
-              Pet of the Day
-            </p>
+            <a href="login">
+              <p class="title">
+                Pet of the Day
+              </p>
 
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="{{randomPet.pet_image_url}}" alt="Card image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-content">
-                    <p class="title is-5">{{randomPet.pet_name}}</p>
-                    <p class="subtitle is-6">{{randomPet.pet_description}}</p>
-                  </div>
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img id="home-pet-img" src="{{randomPet.pet_image_url}}" alt="Card image">
+                  </figure>
                 </div>
-                {{!-- <div class="content">
-                  <small class="has-text-grey">{{randomPet.updatedAt}}</small>
-                </div> --}}
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-5">{{randomPet.pet_name}}</p>
+                      <p class="subtitle is-6">{{randomPet.pet_description}}</p>
+                    </div>
+                  </div>
+                  {{!-- <div class="content">
+                    <small class="has-text-grey">{{randomPet.updatedAt}}</small>
+                  </div> --}}
+                </div>
               </div>
-            </div>
-
+            </a>
           </div>
+
+        </div>
+
+      </div>
+      <div class="column">
+        <div class="card">
+
+          <div class="card-content" background>
+            <a href="login" class="has-text-black">
+              <p class="title">
+                Blog Post
+              </p>
+              <p class="is-size-7">{{format_date randomPost.updatedAt}}</p>
+              <p class="is-size-4"><b>{{randomPost.title}}</b></p>
+              <p>{{randomPost.body}}</p>
+              <figure class="image is-4by3">
+                <img id="home-blog-img" src="{{randomPost.image_url}}" alt="blog post image" />
+              </figure>
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
     <div class="has-text-centered">
-      <p>
+      <p id="joinus">
         Join us now and start tracking your pet's journey!
       </p>
       <a href="http://localhost:8080/login" class="button is-primary">Sign Up</a>

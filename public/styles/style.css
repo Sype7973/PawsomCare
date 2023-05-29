@@ -164,4 +164,23 @@ body {
 
 .hero-body{
   background: #f4c3a3c7;
+  height: fit-content;
+}
+
+#home-blog-img{
+  height: 315px;
+}
+
+#home-pet-img{
+  height: 315px;
+}
+
+a {
+  color: black;
+}
+
+#joinus{
+  padding: 20px;
+  font-weight: bold;
+  font-size: larger;
 }

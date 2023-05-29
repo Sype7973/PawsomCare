@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, BlogPost, Pets, comments } = require('../models');
+const { User, BlogPost, Pets, comments } = require('../Models');
 
 const userData = require('./userData.json');
 const blogData = require('./blogData.json');

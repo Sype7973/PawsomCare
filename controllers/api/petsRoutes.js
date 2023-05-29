@@ -33,7 +33,16 @@ router.delete('/:id', withAuth, async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
     try {
       const petsData = await Pets.create({
-        ...req.body,
+        pet_name: req.body.pet_name,
+        pet_type: req.body.pet_type,
+        pet_breed: req.body.pet_breed,
+        pet_age: req.body.pet_age,
+        pet_description: req.body.pet_description,
+        pet_image_url: req.body.pet_image_url,
+        pet_size: req.body.pet_size,
+        pet_allergies: req.body.pet_allergies,
+        pet_medication: req.body.pet_medication,
+        pet_grooming: req.body.pet_grooming,
         user_id: req.session.user_id,
       });
   

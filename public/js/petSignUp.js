@@ -51,18 +51,17 @@ document.addEventListener('DOMContentLoaded', async function () {
       // Send the data to the server using a POST request
       const response = await fetch('/api/pets', {
         method: 'POST',
-        headers: {
+        headers: { 
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
       });
 
       // Handle the response from the server
-      if (response.ok) {
-        window.location.href = '/pets'; // Redirect to success page
+      if (response) {
+        document.location.replace('/pets'); // Redirect to success page
       } else {
-        console.error("error")
-        // Handle the error and provide feedback to the user
+        alert('Something went wrong. Please try again later.');
       }
     } catch (error) {
       console.error("error");

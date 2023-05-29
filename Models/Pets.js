@@ -33,7 +33,7 @@ Pets.init(
         },
         // image upload
         pet_image_url: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
         },
         pet_size: {
             type: DataTypes.STRING,

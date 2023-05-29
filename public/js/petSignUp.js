@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Collect values for other input fields...
 
     let pet_image_url;
-    // if (image_url === 'No file uploaded') {
 
     if (petType === 'cat') {
       pet_image_urll = './img/cat-placeholder.png';
     } else {
       pet_image_url = './img/dog-placeholder.png';
     }
+    
     // Create an object to hold the collected data
     const formData = {
       pet_name: petName,

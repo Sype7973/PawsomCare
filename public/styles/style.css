@@ -72,7 +72,7 @@ body {
   padding-top: 20px;
 }
 
-.blog-post {
+.card .blog-post {
 
   border-radius: 10px;
   display: flex;

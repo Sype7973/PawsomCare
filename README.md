@@ -19,6 +19,7 @@ Pawesome Care allows the user to easily create a profile for their pet. They sho
 - [License](#license)
 - [Contribution](#contribution)
 - [Tests](#tests)
+- [Future Development](#future-development)
 
  
 
@@ -59,3 +60,19 @@ Adam Day: https://github.com/Sype7973
 
 ## Tests
 N/A 
+
+## Future Development
+
+Upload Images, currently images are placeholder - utilise the mutler npm package to save file destinations for photo upload
+
+Google maps to closest vets
+
+Functionality to add pets and/or pet owners and email/message fellow owners with a click
+
+Functionality to share your pet’s profile with your nominated pet sitter
+
+Edit blog posts directly from the blog post
+
+Phone Application development - Design is responsive to mobile but developments like: tracking dog walks by setting up google maps location services, tracking medicine and providing push notifications, tracking exercise routines and improvements, pages to connect with dog walkers, pet sitters, groomers, trainers, etc 
+
+Navbar Burger Responsiveness for Mobile application

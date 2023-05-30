@@ -61,6 +61,8 @@
         </div>
         <a href="/pets" class="button is-info is-large" style="margin-top: 10px;">Back</a>
         <a href="/pets/edit/{{pets.id}}" class="button is-primary is-large" style="margin-top: 10px;">Edit</a>
+        <button class="button is-large is-danger" id="petDelete" 
+        style="margin-top: 10px;" data-pet-id="{{pets.id}}">Delete</button>
       </div>
     </div>
     <div class="column" style="padding-top: 20px;">
@@ -97,3 +99,4 @@
       </div>
     </div>
   </div>
+  <script src="/js/petcard.js"></script>

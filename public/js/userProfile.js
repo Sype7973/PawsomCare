@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       
         if (response.ok) {
-          window.location.href = '/pets'; // redirect to success page
+          document.location.replace('/pets'); // redirect to success page
         }
         else {
           // handle the error and provide feedback to the user

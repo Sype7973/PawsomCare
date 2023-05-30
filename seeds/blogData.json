@@ -10,21 +10,21 @@
   },
   {
     "id": 2,
-    "pet_category": "Cats",
-    "post_type": "Advice",
-    "title": "How do i make my cat take his medicine?",
-    "body": "He always spits it out!",
-    "user_id": 2,
-    "image_url": "./img/cat-placeholder.png"
-  },
-  {
-    "id": 3,
     "pet_category": "Dogs",
     "post_type": "Advice",
     "title": "How to make my puppy stop eating my shoes?",
     "body": "It's like he's a shredding machine!",
     "user_id": 3,
     "image_url": "./img/dog-placeholder.png"
+  },
+  {
+    "id": 3,
+    "pet_category": "Cats",
+    "post_type": "Advice",
+    "title": "How do i make my cat take his medicine?",
+    "body": "He always spits it out!",
+    "user_id": 2,
+    "image_url": "./img/cat-placeholder.png"
   },
   {
     "id": 4,

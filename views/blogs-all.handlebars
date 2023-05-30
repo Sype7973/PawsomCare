@@ -2,21 +2,29 @@
     <div class="container" id="blogs">
 
         {{#if (eq pet_category "Cats")}}
-        {{#if (eq post_type "Advice")}}
-        <h2 class="title is-2">Cat Advice</h2>
-        {{else if (eq post_type "Funny")}}
-        <h2 class="title is-2">Funny Cats</h2>
-        {{else if (eq post_type "all")}}
-        <h2 class="title is-2">All Cat Posts</h2>
-        {{/if}}
-        {{else}}
-        {{#if (eq post_type "Advice")}}
-        <h2 class="title is-2">Dog Advice</h2>
-        {{else if (eq post_type "Funny")}}
-        <h2 class="title is-2">Funny Dogs</h2>
-        {{else if (eq post_type "all")}}
-        <h2 class="title is-2">All Dog Posts</h2>
-        {{/if}}
+            {{#if (eq post_type "Advice")}}
+            <h2 class="title is-2">Cat Advice</h2>
+            {{else if (eq post_type "Funny")}}
+            <h2 class="title is-2">Funny Cats</h2>
+            {{else if (eq post_type "all")}}
+            <h2 class="title is-2">All Cat Posts</h2>
+            {{/if}}
+        {{else if (eq pet_category "Dogs")}}
+            {{#if (eq post_type "Advice")}}
+            <h2 class="title is-2">Dog Advice</h2>
+            {{else if (eq post_type "Funny")}}
+            <h2 class="title is-2">Funny Dogs</h2>
+            {{else if (eq post_type "all")}}
+            <h2 class="title is-2">All Dog Posts</h2>
+            {{/if}}
+        {{else if (eq pet_category "all")}}
+            {{#if (eq post_type "Advice")}}
+            <h2 class="title is-2">All Advice</h2>
+            {{else if (eq post_type "Funny")}}
+            <h2 class="title is-2">Funny Stories</h2>
+            {{else if (eq post_type "all")}}
+            <h2 class="title is-2">All Posts</h2>
+            {{/if}}
         {{/if}}
 
         {{#each blogPosts as |post| }}
@@ -47,8 +55,8 @@
                     </div>
                     <button href="/blogs/{{id}}" class="button is-small is-info p-4 is-size-6"
                         data-blog-id="{{id}}">View</button>
-                    <button class="button is-small is-danger delete-blog is-hidden m-0 p-4 is-full is-size-6" data-blog-id="{{id}}"
-                        data-blog-owner="{{User.id}}">Delete</button>
+                    <button class="button is-small is-danger delete-blog is-hidden m-0 p-4 is-full is-size-6"
+                        data-blog-id="{{id}}" data-blog-owner="{{User.id}}">Delete</button>
 
 
                 </div>

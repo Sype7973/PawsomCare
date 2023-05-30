@@ -112,15 +112,28 @@ router.get('/:id', withAuth, async (req, res) => {
 
 // Z - route for getting cat or dog blogs that are advice/funny/or all
 router.get('/:pet_category/:post_type', withAuth, async (req, res) => {
-// /:location/:cagory/:difficulty
+    // /:location/:cagory/:difficulty
 
     console.log(req.params.post_type);
     try {
         // Get all blogs and JOIN with user data
 
         let blogPostsData;
-        // TO DO: !!!!! order from last to first?
-        if (req.params.post_type === 'all') {
+        
+        if ((req.params.post_type === 'all') && (req.params.pet_category === 'all')) {
+            blogPostsData = await BlogPost.findAll({
+                include: [{ model: User }],
+                order: [['updatedAt', 'DESC']],
+            });
+        } else if (req.params.pet_category === 'all') {
+            blogPostsData = await BlogPost.findAll({
+                where: {
+                    post_type: req.params.post_type,
+                },
+                include: [{ model: User }],
+                order: [['updatedAt', 'DESC']],
+            });
+        } else if (req.params.post_type === 'all') {
             blogPostsData = await BlogPost.findAll({
                 where: {
                     pet_category: req.params.pet_category,
@@ -173,7 +186,7 @@ router.get('/:pet_category/:post_type', withAuth, async (req, res) => {
 
             })
         );
-    
+
         post_type = req.params.post_type;
         pet_category = req.params.pet_category;
         // Pass serialized data and session flag into template
